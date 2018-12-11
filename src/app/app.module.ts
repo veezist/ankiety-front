@@ -1,16 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-
-import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './authentication/register.component';
+import { SurveyListComponent } from './survey-list/survey-list.component';
+import { LoginComponent } from './authentication/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    RegisterComponent,
+    SurveyListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

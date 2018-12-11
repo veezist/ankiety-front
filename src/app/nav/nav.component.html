@@ -1,12 +1,12 @@
 <header>
   <div class="container">
-    <a routerLink="/">{{ appTitle }}</a>
+    <a [routerLink]="['/']">{{ appTitle }}</a>
     <nav>
       <ul>
-        <li><a routerLink="/">Strona główna</a></li>
-        <li><a routerLink="/about">Zaloguj się</a></li>
-        <li><a routerLink="/contact">Zarejestruj się</a></li>
-      </ul>
+        <li><a [routerLink]="['/surveys']">Strona główna</a></li>
+        <li><a [routerLink]="['/login']">Zaloguj się</a></li>
+        <li><a [routerLink]="['/register']">Zarejestruj się</a></li>
+      </ul> 
     </nav>
   </div>
 </header>
