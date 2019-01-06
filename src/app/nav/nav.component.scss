@@ -1,4 +1,15 @@
-header {
+mat-toolbar
+{
+    margin-bottom: 20px;
+}
+
+mat-toolbar > a:hover
+{
+    text-decoration: none;
+    color: white;
+}
+
+/* header {
     background: #7700FF;
 
     .logo {
@@ -27,4 +38,4 @@ header {
             }
         }
     }
-}
+} */

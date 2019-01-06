@@ -1,20 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
 @import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700'); */
 
-body, html {
-    height: 100%;
-    margin: 0 auto;
+body
+{
+    margin: 0;
+    /* font-size: 18px; */
+    /* font-family: 'Montserrat'; */
 }
 
-body {
-    font-family: 'Montserrat';
-    font-size: 18px;
+#content
+{
+    min-height: 100vh;
+    
+    background: #fafafa;
 }
 
-a {
-    text-decoration: none;
+.mat-button-focus-overlay
+{
+    background: white;
 }
 
+.fill-remaining-space
+{
+    /* This fills the remaining space, by using flexbox.
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+/* 
 .container {
     width: 80%;
     margin: 0 auto;
@@ -28,7 +43,7 @@ a {
 }
 
 section {
-    width: 80%;
+    width: 80%; 
     margin: 0 auto;
     padding: 2em;
-}
+} */
