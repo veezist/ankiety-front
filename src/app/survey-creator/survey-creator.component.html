@@ -1,8 +1,19 @@
-<div fxLayout="row">
-  <p fxFlex="20%">survey-creator is under construction</p>
-  <p fxFlex="20%" style="background: red;">Row 1</p>
-  <p fxFlex="60%" style="background: yellowgreen;">Row 2</p>
-</div>
+<mat-card id="survey-container" fxLayout="column">
+
+  <mat-card-title>Kreator Ankiety</mat-card-title>
+
+  <button id="save-survey-button" mat-raised-button type="button" color="primary"
+          (click)="onSaveSurveyButtonClicked()">
+  Zapisz Ankietę
+  </button>
+  <app-survey-question class="survey-question" *ngFor="let hero of questions"></app-survey-question>
+
+  <div fxLayout="row">
+    <button id="add-question-button" mat-raised-button type="button" color="primary" (click)="onAddQuestionButtonClick()">Dodaj pytanie</button>
+    <button id="delete-question-button" mat-raised-button type="button" color="warn" (click)="onDeleteQuestionButtonClick()">Usuń pytanie</button>
+  </div>
+
+</mat-card>
 
 <!-- 
 <button (click)="addNewCompany()">Add new Company</button><br><br>

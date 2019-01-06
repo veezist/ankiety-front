@@ -29,6 +29,15 @@ body
     flex: 1 1 auto;
 }
 
+button:focus
+{
+    outline: none;
+}
+
+.mat-pseudo-checkbox-checked
+{
+    background: #673ab7;
+}
 /* 
 .container {
     width: 80%;

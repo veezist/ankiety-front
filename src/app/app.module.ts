@@ -6,10 +6,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import {
   MatButtonModule,
+  MatCheckboxModule,
   MatToolbarModule,
   MatIconModule,
+  MatDialogModule,
   MatCardModule,
-  MatDialogModule
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatBadgeModule,
+  MatTabsModule,
+  MatGridListModule,
+  MatTooltipModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +32,8 @@ import { HomeComponent } from './home/home.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { ForgotPasswordDialogComponent } from './authentication/forgot-password-dialog/forgot-password-dialog.component';
 import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
+import { QuestionComponent } from './survey/question/question.component';
+import { SurveySavedDialogComponent } from './survey-creator/survey-saved-dialog/survey-saved-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +45,9 @@ import { SurveyCreatorComponent } from './survey-creator/survey-creator.componen
     HomeComponent,
     ForgotPasswordComponent,
     ForgotPasswordDialogComponent,
-    SurveyCreatorComponent
+    SurveyCreatorComponent,
+    QuestionComponent,
+    SurveySavedDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -42,14 +55,25 @@ import { SurveyCreatorComponent } from './survey-creator/survey-creator.componen
     HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    BrowserAnimationsModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule,
     MatCardModule,
-    MatDialogModule
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatBadgeModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   entryComponents: [
-    ForgotPasswordDialogComponent
+    ForgotPasswordDialogComponent,
+    SurveySavedDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

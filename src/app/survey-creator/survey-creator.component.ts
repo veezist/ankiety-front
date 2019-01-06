@@ -1,17 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionComponent } from '../survey/question/question.component';
+import { MatDialog } from '@angular/material';
+import { SurveySavedDialogComponent } from './survey-saved-dialog/survey-saved-dialog.component';
 
 @Component({
   selector: 'app-survey-creator',
   templateUrl: './survey-creator.component.html',
   styleUrls: ['./survey-creator.component.scss']
 })
-export class SurveyCreatorComponent implements OnInit {
+export class SurveyCreatorComponent implements OnInit
+{
+  private questions: Array<QuestionComponent> = [];
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
 
+  onSaveSurveyButtonClicked()
+  {
+    this.dialog.open(SurveySavedDialogComponent);
+  }
+
+  onAddQuestionButtonClick()
+  {
+    this.questions.push(new QuestionComponent());
+  }
+
+  onDeleteQuestionButtonClick()
+  {
+    this.questions.pop();
+  }
 }
 
 /* import { Component } from '@angular/core';

@@ -1,0 +1,17 @@
+<mat-card class="mat-elevation-z4" fxLayout="column">
+	<mat-form-field>
+		<input matInput placeholder="Treść Pytania">
+	</mat-form-field>
+
+	<button id="add-answer-button" mat-stroked-button type="button" color="primary"
+			(click)="onAddAnswerButtonClicked()">
+	Dodaj odpowiedź
+	</button>
+
+	<mat-selection-list>
+		<mat-list-option *ngFor="let answer of answers">
+			<input matInput type="text" placeholder="Treść pytania">
+			<mat-icon color="warn" style="display: inline; position: relative; right: 0;">clear</mat-icon>
+		</mat-list-option>
+	</mat-selection-list>
+</mat-card>
