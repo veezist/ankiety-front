@@ -7,7 +7,8 @@ import {
   MatButtonModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatDialogModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,8 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { SurveyListComponent } from './survey-list/survey-list.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
+import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
+import { ForgotPasswordDialogComponent } from './authentication/forgot-password-dialog/forgot-password-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     SurveyListComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ForgotPasswordComponent,
+    ForgotPasswordDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,11 @@ import { HomeComponent } from './home/home.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    ForgotPasswordDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
