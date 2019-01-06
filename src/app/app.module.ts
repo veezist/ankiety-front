@@ -21,6 +21,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { ForgotPasswordDialogComponent } from './authentication/forgot-password-dialog/forgot-password-dialog.component';
+import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ForgotPasswordDialogComponent } from './authentication/forgot-password-
     LoginComponent,
     HomeComponent,
     ForgotPasswordComponent,
-    ForgotPasswordDialogComponent
+    ForgotPasswordDialogComponent,
+    SurveyCreatorComponent
   ],
   imports: [
     BrowserModule,
