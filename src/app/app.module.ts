@@ -18,7 +18,9 @@ import {
   MatTabsModule,
   MatGridListModule,
   MatTooltipModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatOptionModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +36,7 @@ import { ForgotPasswordDialogComponent } from './authentication/forgot-password-
 import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
 import { QuestionComponent } from './survey/question/question.component';
 import { SurveySavedDialogComponent } from './survey-creator/survey-saved-dialog/survey-saved-dialog.component';
+import { AnswerComponent } from './survey/answer/answer.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { SurveySavedDialogComponent } from './survey-creator/survey-saved-dialog
     ForgotPasswordDialogComponent,
     SurveyCreatorComponent,
     QuestionComponent,
-    SurveySavedDialogComponent
+    SurveySavedDialogComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +73,9 @@ import { SurveySavedDialogComponent } from './survey-creator/survey-saved-dialog
     MatTabsModule,
     MatGridListModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,

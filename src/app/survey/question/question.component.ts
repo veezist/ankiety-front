@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnswerComponent } from '../answer/answer.component';
 
 @Component({
   selector: 'app-survey-question',
@@ -7,16 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit
 {
-  private answers: Array<string> = [];
+	private answerTypes: Array<string> = ["1 z N", "tesktowa"]; 
+	private answers: Array<AnswerComponent> = [];
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() 
-  {
-  }
+	ngOnInit() 
+	{
+	}
 
-  onAddAnswerButtonClicked()
-  {
-    this.answers.push('ala ma kota');
-  }
+	onAddAnswerButtonClicked(selectedType: any)
+	{
+		console.log('question: ' + selectedType);
+
+		if (selectedType !== undefined)
+		{
+			this.answers.push(new AnswerComponent());
+		}
+	}
 }

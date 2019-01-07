@@ -3,15 +3,20 @@
 		<input matInput placeholder="Treść Pytania">
 	</mat-form-field>
 
-	<button id="add-answer-button" mat-stroked-button type="button" color="primary"
-			(click)="onAddAnswerButtonClicked()">
-	Dodaj odpowiedź
-	</button>
+	<div class="answer-options" fxLayout="row">
+		<button class="answer-option-add-answer" mat-stroked-button type="button" color="primary"
+				(click)="onAddAnswerButtonClicked( selectedType.value )">
+			Dodaj odpowiedź
+		</button>
+		<mat-select class="answer-option-select-type" #selectedType placeholder="Wybierz typ">
+			<mat-option *ngFor="let answerType of answerTypes" [value]="answerType">
+				{{ answerType }}
+			</mat-option>
+		</mat-select>
+	</div>
 
-	<mat-selection-list>
-		<mat-list-option *ngFor="let answer of answers">
-			<input matInput type="text" placeholder="Treść pytania">
-			<mat-icon color="warn" style="display: inline; position: relative; right: 0;">clear</mat-icon>
-		</mat-list-option>
-	</mat-selection-list>
+	<mat-list *ngFor="let answer of answers">
+		<app-survey-answer class="answer-container" [answerType]="selectedType.value"></app-survey-answer>
+	</mat-list>
+	
 </mat-card>

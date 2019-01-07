@@ -1,0 +1,30 @@
+.answer-container
+{
+	position: relative;
+}
+
+.answer-content
+{
+	width: 100%;
+}
+
+.answer-content-checkbox-input
+{
+	width: 100%;
+	
+	padding-top: 5px;
+	padding-left: 10px;
+
+	border-bottom: 1px solid gray;
+}
+.answer-suffix
+{
+	position: absolute;
+	top: 30%;
+	right: 2%;
+}
+
+.answer-suffix-remove
+{
+	margin-left: 5px;
+}

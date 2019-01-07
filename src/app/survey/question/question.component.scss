@@ -1,4 +1,25 @@
-#add-answer-button
+.answer-options
 {
 	width: 50%;
+}
+
+.answer-option-add-answer
+{
+	width: 40%;
+}
+
+.answer-option-select-type
+{
+	width: 60%;
+
+	margin-left: 5px;
+	margin-bottom: 1px;
+	padding-top: 7px;
+
+	border-bottom: 1px solid gray;
+}
+
+.answer-container
+{
+	margin-top: 17px;
 }
