@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionComponent } from '../survey/question/question.component';
 import { MatDialog } from '@angular/material';
 import { SurveySavedDialogComponent } from './survey-saved-dialog/survey-saved-dialog.component';
+import { CreatorQuestionComponent } from './survey/creator-question/creator-question.component';
+import { Question } from '../models/survey/question';
 
 @Component({
 	selector: 'app-survey-creator',
@@ -10,7 +11,7 @@ import { SurveySavedDialogComponent } from './survey-saved-dialog/survey-saved-d
 })
 export class SurveyCreatorComponent implements OnInit
 {
-	private questions: Array<QuestionComponent> = [];
+	private questions: Array<Question> = [];
 
 	constructor(private dialog: MatDialog) { }
 
@@ -25,7 +26,10 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddFirstQuestionButtonClick()
 	{
-		this.questions.push(new QuestionComponent());
+		const question = new Question();
+		question.text = 'ala ma pałę';
+		console.log('surveyCreator: ' + JSON.stringify(question));
+		this.questions.push(question);
 	}
 
 	onSaveSurveyButtonClicked()
@@ -40,12 +44,12 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddQuestionBelowButtonClick()
 	{
-		this.questions.push(new QuestionComponent());
+		this.questions.push(new Question());
 	}
 
 	onAddQuestionAboveButtonClick(index: any)
 	{
-		this.questions.splice(index, 0, new QuestionComponent());
+		this.questions.splice(index, 0, new Question());
 	}
 
 	onDeleteQuestionButtonClick(index: any)

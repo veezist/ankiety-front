@@ -1,6 +1,6 @@
 <mat-card class="mat-elevation-z4" fxLayout="column">
 	<mat-form-field>
-		<input matInput placeholder="Treść Pytania">
+		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania">
 	</mat-form-field>
 
 	<div class="answer-options" fxLayout="row">
@@ -15,8 +15,8 @@
 		</mat-select>
 	</div>
 
-	<mat-list *ngFor="let answer of answers">
-		<app-survey-answer class="answer-container" [answerType]="selectedType.value"></app-survey-answer>
+	<mat-list *ngFor="let answer of question.answers">
+		<app-survey-creator-answer class="answer-container" [answerType]="selectedType.value"></app-survey-creator-answer>
 	</mat-list>
 	
 </mat-card>

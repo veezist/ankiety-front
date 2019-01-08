@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-survey-answer',
-  templateUrl: './answer.component.html',
-  styleUrls: ['./answer.component.scss']
+  selector: 'app-survey-creator-answer',
+  templateUrl: './creator-answer.component.html',
+  styleUrls: ['./creator-answer.component.scss']
 })
-export class AnswerComponent implements OnInit
+export class CreatorAnswerComponent implements OnInit
 {
   @Input() answerType: string;
   private answerTypeCopy: string;

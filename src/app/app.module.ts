@@ -34,9 +34,10 @@ import { HomeComponent } from './home/home.component';
 import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
 import { ForgotPasswordDialogComponent } from './authentication/forgot-password-dialog/forgot-password-dialog.component';
 import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
-import { QuestionComponent } from './survey/question/question.component';
 import { SurveySavedDialogComponent } from './survey-creator/survey-saved-dialog/survey-saved-dialog.component';
-import { AnswerComponent } from './survey/answer/answer.component';
+import { CreatorAnswerComponent } from './survey-creator/survey/creator-answer/creator-answer.component';
+import { CreatorQuestionComponent } from './survey-creator/survey/creator-question/creator-question.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,9 +50,9 @@ import { AnswerComponent } from './survey/answer/answer.component';
     ForgotPasswordComponent,
     ForgotPasswordDialogComponent,
     SurveyCreatorComponent,
-    QuestionComponent,
     SurveySavedDialogComponent,
-    AnswerComponent
+    CreatorAnswerComponent,
+    CreatorQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +61,7 @@ import { AnswerComponent } from './survey/answer/answer.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
