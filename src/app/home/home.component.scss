@@ -1,0 +1,32 @@
+.mat-grid-tile
+{
+    border-style: solid;
+    border-color: #6610f2;
+    border-width: 1px;
+}
+.mat-list-icon {
+    color: rgba(0, 0, 0, 0.54);
+    size: 15px;
+  }
+.mat-list-item
+{
+    font-size:10px;
+}
+  .text-inside-grid
+  {
+    position: absolute;
+    left: 5px;   
+    top: 5px;   
+  }
+  .mat-list
+  {
+    flex-grow: 1;
+    overflow: auto;
+  }
+  
+  .mat-grid-tile.NumOfSurvays
+  {
+    position: absolute;
+    text-align: center;
+    color: red;
+  }
