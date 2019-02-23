@@ -27,16 +27,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { RegisterComponent } from './authentication/register/register.component';
-import { SurveyListComponent } from './survey-list/survey-list.component';
-import { LoginComponent } from './authentication/login/login.component';
-import { HomeComponent } from './home/home.component';
-import { ForgotPasswordComponent } from './authentication/forgot-password/forgot-password.component';
-import { ForgotPasswordDialogComponent } from './authentication/forgot-password-dialog/forgot-password-dialog.component';
-import { SurveyCreatorComponent } from './survey-creator/survey-creator.component';
-import { SurveySavedDialogComponent } from './survey-creator/survey-saved-dialog/survey-saved-dialog.component';
-import { CreatorAnswerComponent } from './survey-creator/survey/creator-answer/creator-answer.component';
-import { CreatorQuestionComponent } from './survey-creator/survey/creator-question/creator-question.component';
+import { RegisterComponent } from './pages/authentication/register/register.component';
+import { SurveyListComponent } from './pages/survey-list/survey-list.component';
+import { LoginComponent } from './pages/authentication/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ForgotPasswordComponent } from './pages/authentication/forgot-password/forgot-password.component';
+import { ForgotPasswordDialogComponent } from './pages/authentication/forgot-password/forgot-password-dialog/forgot-password-dialog.component';
+import { SurveyCreatorComponent } from './pages/survey-creator/survey-creator.component';
+import { SurveySavedDialogComponent } from './pages/survey-creator/survey-saved-dialog/survey-saved-dialog.component';
+import { CreatorAnswerComponent } from './pages/survey-creator/survey/creator-answer/creator-answer.component';
+import { CreatorQuestionComponent } from './pages/survey-creator/survey/creator-question/creator-question.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

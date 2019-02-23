@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { SurveySavedDialogComponent } from './survey-saved-dialog/survey-saved-dialog.component';
 import { CreatorQuestionComponent } from './survey/creator-question/creator-question.component';
-import { Question } from '../models/survey/question';
+import { Question } from '../../models/survey/question';
 
 @Component({
 	selector: 'app-survey-creator',
@@ -19,7 +19,7 @@ export class SurveyCreatorComponent implements OnInit
 	{
 	}
 
-	onPublishSurveyButtonClick()
+onPublishSurveyButtonClick()
 	{
 		this.dialog.open(SurveySavedDialogComponent);
 	}
