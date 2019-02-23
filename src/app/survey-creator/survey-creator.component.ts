@@ -26,10 +26,7 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddFirstQuestionButtonClick()
 	{
-		const question = new Question();
-		question.text = 'ala ma pałę';
-		console.log('surveyCreator: ' + JSON.stringify(question));
-		this.questions.push(question);
+		this.questions.push(new Question());
 	}
 
 	onSaveSurveyButtonClicked()

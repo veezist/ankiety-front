@@ -29,7 +29,10 @@ export class CreatorQuestionComponent implements OnInit
 
 		if (selectedType !== undefined)
 		{
-			this.question.answers.push(new Answer());
+			const newAnswer = new Answer();
+			newAnswer.type = selectedType;
+
+			this.question.answers.push(newAnswer);
 		}
 	}
 }

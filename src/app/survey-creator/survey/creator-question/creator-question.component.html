@@ -16,7 +16,7 @@
 	</div>
 
 	<mat-list *ngFor="let answer of question.answers">
-		<app-survey-creator-answer class="answer-container" [answerType]="selectedType.value"></app-survey-creator-answer>
+		<app-survey-creator-answer class="answer-container" [answerType]="answer.type"></app-survey-creator-answer>
 	</mat-list>
 	
 </mat-card>
