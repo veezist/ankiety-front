@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './survey-saved-dialog.component.html',
   styleUrls: ['./survey-saved-dialog.component.scss']
 })
-export class SurveySavedDialogComponent implements OnInit {
-
+export class SurveySavedDialogComponent implements OnInit
+{
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
-
 }

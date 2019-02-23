@@ -27,19 +27,18 @@ export interface Tile {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit
+{
   surveys: Object;
   constructor(private data: DataService) {}
 
-  ngOnInit() {
-        this.data.getFakeSurveys().subscribe(data => {
-            this.surveys = data
-           console.log(this.surveys);         
-         });
-
-    
-        }
-
+  ngOnInit()
+  {
+    this.data.getFakeSurveys().subscribe(data => {
+      this.surveys = data
+      console.log(this.surveys);
+    });
+  }
 
   tiles: Tile[] = [
     {text: 'One', cols: 1, rows: 2, color: "white"},
