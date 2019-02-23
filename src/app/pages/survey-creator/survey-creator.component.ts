@@ -19,7 +19,7 @@ export class SurveyCreatorComponent implements OnInit
 	{
 	}
 
-onPublishSurveyButtonClick()
+	onPublishSurveyButtonClick()
 	{
 		this.dialog.open(SurveySavedDialogComponent);
 	}
