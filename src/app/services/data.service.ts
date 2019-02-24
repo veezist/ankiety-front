@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpEvent } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -21,6 +21,15 @@ export class DataService
   {
     const url = `${this.baseUrl}${relativeUrl}`;
     return this.http.post<T>(url, object).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  public postObjectByUrlWithOptions<T>(object: T, relativeUrl: string, options: any)
+  : Observable<HttpEvent<T>>
+  {
+    const url = `${this.baseUrl}${relativeUrl}`;
+    return this.http.post<T>(url, object, options).pipe(
       catchError(this.handleError)
     );
   }
