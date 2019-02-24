@@ -21,6 +21,13 @@
 		<app-creator-survey-question [question]="questions[idx]">
 		</app-creator-survey-question>
 
+		<div class="survey-question-type" (click)="logSth()">
+			<select [(ngModel)]="question.type" disableUnderline>
+				<option value="1ofn">1 z N</option>
+				<option value="text">tekst</option>
+			</select>
+		</div>
+
 		<mat-card class="survey-question-options">
 			<mat-icon dnd-sortable-handle>
 				drag_handle
@@ -28,15 +35,15 @@
 			<mat-icon (click)="onAddQuestionBelowButtonClick()">
 				arrow_drop_down
 			</mat-icon>
-			<mat-icon (click)="onAddQuestionAboveButtonClick( questionRef.dataset.questionIndex )">
+			<mat-icon (click)="onAddQuestionAboveButtonClick( idx )">
 				arrow_drop_up
 			</mat-icon>
 			<mat-icon color="warn" 
-					  (click)="onDeleteQuestionButtonClick( questionRef.dataset.questionIndex )">
+					  (click)="onDeleteQuestionButtonClick( idx )">
 				clear
 			</mat-icon>
 		</mat-card>
-
+		<!-- questionRef.dataset.questionIndex -->
 	</section>
 
 	<div fxLayout="row">

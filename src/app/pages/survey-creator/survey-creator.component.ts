@@ -19,6 +19,12 @@ export class SurveyCreatorComponent implements OnInit
 	{
 	}
 
+	logSth()
+	{
+		this.questions[0].type = 'text';
+		console.log(this.questions);
+	}
+
 	onPublishSurveyButtonClick()
 	{
 		this.dialog.open(SurveySavedDialogComponent);
@@ -41,12 +47,13 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddQuestionBelowButtonClick()
 	{
-		this.questions.push(new Question());
+		this.questions.push(new Question(this.questions[this.questions.length - 1].type));
 	}
 
 	onAddQuestionAboveButtonClick(index: any)
 	{
-		this.questions.splice(index, 0, new Question());
+		console.log(index);
+		this.questions.splice(index, 0, new Question(this.questions[index].type));
 	}
 
 	onDeleteQuestionButtonClick(index: any)
