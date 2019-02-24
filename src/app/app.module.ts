@@ -40,6 +40,7 @@ import { CreatorQuestionComponent } from './pages/survey-creator/survey/creator-
 import { FormsModule } from '@angular/forms';
 import { AuthHttpInterceptor } from './other/auth-http-interceptor';
 import { CookieService } from 'ngx-cookie-service';
+import { DndModule } from 'ng2-dnd';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    DndModule.forRoot(),
     BrowserAnimationsModule,
     FlexLayoutModule,
     BrowserAnimationsModule,

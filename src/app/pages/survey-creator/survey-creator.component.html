@@ -1,4 +1,4 @@
-<mat-card id="survey-container" fxLayout="column">
+<mat-card id="survey-container" fxLayout="column" #questionRef dnd-sortable-container [sortableData]="questions">
 
 	<mat-card-title>Kreator Ankiety</mat-card-title>
 
@@ -15,12 +15,16 @@
 		</button>
 	</mat-card>
 
-	<section class="survey-question-container" #questionRef *ngFor="let question of questions; let idx=index"
-			 style="position: relative;" [attr.data-question-index]="idx">
+	<section class="survey-question-container" *ngFor="let question of questions; let idx=index"
+			 style="position: relative;" [attr.data-question-index]="idx" dnd-sortable [sortableIndex]="idx" >
 
-		<app-creator-survey-question [question]="questions[idx]"></app-creator-survey-question>
+		<app-creator-survey-question [question]="questions[idx]">
+		</app-creator-survey-question>
 
 		<mat-card class="survey-question-options">
+			<mat-icon dnd-sortable-handle>
+				drag_handle
+			</mat-icon>
 			<mat-icon (click)="onAddQuestionBelowButtonClick()">
 				arrow_drop_down
 			</mat-icon>
