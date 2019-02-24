@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -38,6 +38,8 @@ import { SurveySavedDialogComponent } from './pages/survey-creator/survey-saved-
 import { CreatorAnswerComponent } from './pages/survey-creator/survey/creator-answer/creator-answer.component';
 import { CreatorQuestionComponent } from './pages/survey-creator/survey/creator-question/creator-question.component';
 import { FormsModule } from '@angular/forms';
+import { AuthHttpInterceptor } from './other/auth-http-interceptor';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,14 @@ import { FormsModule } from '@angular/forms';
     ForgotPasswordDialogComponent,
     SurveySavedDialogComponent
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHttpInterceptor,
+      multi: true
+    },
+    CookieService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
