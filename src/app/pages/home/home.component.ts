@@ -29,7 +29,7 @@ export interface Tile {
 })
 export class HomeComponent implements OnInit
 {
-  surveys: Object;
+  surveys: Object = undefined;
   constructor(private data: DataService) {}
 
   ngOnInit()
