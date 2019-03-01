@@ -12,6 +12,7 @@ import { Question } from '../../models/survey/question';
 export class SurveyCreatorComponent implements OnInit
 {
 	private questions: Array<Question> = [];
+	private QuestionTYPES = Question.TYPES;
 
 	constructor(private dialog: MatDialog) { }
 
@@ -21,7 +22,6 @@ export class SurveyCreatorComponent implements OnInit
 
 	logSth()
 	{
-		this.questions[0].type = 'text';
 		console.log(this.questions);
 	}
 

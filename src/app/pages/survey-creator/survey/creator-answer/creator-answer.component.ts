@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Answer } from 'src/app/models/survey/answer';
+import { Question } from 'src/app/models/survey/question';
 
 @Component({
   selector: 'app-survey-creator-answer',
@@ -8,24 +9,21 @@ import { Answer } from 'src/app/models/survey/answer';
 })
 export class CreatorAnswerComponent implements OnInit
 {
-  @Input() answerType: string;
-  private answerTypeCopy: string;
-
-  @Input()
-  private answer: Answer;
-  
+  @Input() 
+  public answerType: string;
   @Input()
   public emiter = new EventEmitter();
 
+  @Input()
+  private answer: Answer;
+  private QuestionTYPES = Question.TYPES;
+  
   constructor()
   {
   }
 
   ngOnInit()
   {
-    this.answerTypeCopy = this.answerType.toString();
-
-    console.log(this.answerTypeCopy);
   }
 
   onRemoveAnswerClick()

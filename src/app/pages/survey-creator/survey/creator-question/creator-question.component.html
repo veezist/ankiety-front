@@ -1,28 +1,29 @@
-<mat-card class="mat-elevation-z4" fxLayout="column">
+<mat-card class="question-container mat-elevation-z4" fxLayout="column">
 	<mat-form-field>
 		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania">
 	</mat-form-field>
 
-	<div *ngIf="question.type == '1ofn'">
-	<div class="answer-options" fxLayout="row">
-		<button class="answer-option-add-answer" mat-stroked-button type="button" color="primary"
+	<div *ngIf="question.type === QuestionTYPES.OneOfN">
+		<div class="answer-options" fxLayout="row">
+			<button class="answer-option-add-answer" mat-stroked-button type="button" color="primary"
 				(click)="onAddAnswerButtonClicked( 'avs' )">
-			Dodaj odpowiedź
-		</button>
+				Dodaj odpowiedź
+			</button>
+		</div>
+		<mat-list *ngFor="let answer of question.answers">
+			<app-survey-creator-answer class="answer-container" [answerType]="answer.type"></app-survey-creator-answer>
+		</mat-list>
 	</div>
+
+	<div *ngIf="question.type == QuestionTYPES.Text">
+		<mat-form-field style="width:100%;">
+			<input matInput placeholder="Treść odpowiedzi">
+		</mat-form-field>
+	</div>
+</mat-card>
+
 		<!-- <mat-select class="answer-option-select-type" #selectedType placeholder="Wybierz typ">
 			<mat-option *ngFor="let answerType of answerTypes" [value]="answerType">
 				{{ answerType }}
 			</mat-option>
 		</mat-select> -->
-		<mat-list *ngFor="let answer of question.answers">
-				<app-survey-creator-answer class="answer-container" [answerType]="answer.type"></app-survey-creator-answer>
-			</mat-list>
-	</div>
-
-	<div *ngIf="question.type == 'text'">
-			<mat-form-field style="width:100%;">
-					<input matInput placeholder="Treść odpowiedzi">
-				</mat-form-field>
-	</div>
-</mat-card>

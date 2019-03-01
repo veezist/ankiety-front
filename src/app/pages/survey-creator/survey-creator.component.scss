@@ -84,6 +84,15 @@
 	width: 50%;
 }
 
+.mat-card:not(.survey-question-options)
+{
+	cursor: default !important;
+	&:active
+	{
+		cursor: default !important;
+	}
+}
+
 .mat-card:hover
 {
 	cursor: pointer;

@@ -1,10 +1,9 @@
 <mat-list-item class="answer-container">
-
-	<mat-form-field class="answer-content" *ngIf="answerTypeCopy === 'tekstowa'">
+	<mat-form-field class="answer-content" *ngIf="answerType === QuestionTYPES.Text">
 		<input matInput placeholder="treść odpowiedzi">
 	</mat-form-field>
 
-	<mat-checkbox *ngIf="answerTypeCopy === '1ofn'" class="answer-content" color="primary">
+	<mat-checkbox *ngIf="answerType === QuestionTYPES.OneOfN" class="answer-content" color="primary">
 		<input matInput class="answer-content-checkbox-input" placeholder="treść odpowiedzi">
 	</mat-checkbox>
 
@@ -12,5 +11,4 @@
 		<!-- <span class="answer-suffix-type"><mat-icon> create </mat-icon></span> -->
 		<span class="answer-suffix-remove"><mat-icon color="warn" style="cursor: pointer;" (click)="onRemoveAnswerClick()"> clear </mat-icon></span>
 	</div>
-
 </mat-list-item>

@@ -16,34 +16,33 @@
 	</mat-card>
 
 	<section class="survey-question-container" *ngFor="let question of questions; let idx=index"
-			 style="position: relative;" [attr.data-question-index]="idx" dnd-sortable [sortableIndex]="idx" >
+			style="position: relative;" [attr.data-question-index]="idx" dnd-sortable [sortableIndex]="idx" >
 
-		<app-creator-survey-question [question]="questions[idx]">
-		</app-creator-survey-question>
+		<app-creator-survey-question [question]="questions[idx]"></app-creator-survey-question>
 
 		<div class="survey-question-type" (click)="logSth()">
 			<select [(ngModel)]="question.type" disableUnderline>
-				<option value="1ofn">1 z N</option>
-				<option value="text">tekst</option>
+				<option> {{QuestionTYPES.OneOfN}} </option>
+				<option> {{QuestionTYPES.Text}} </option>
 			</select>
 		</div>
 
 		<mat-card class="survey-question-options">
-			<mat-icon dnd-sortable-handle>
+			<mat-icon dnd-sortable-handle matTooltip="przemieść pytanie" [matTooltipShowDelay]="500">
 				drag_handle
 			</mat-icon>
-			<mat-icon (click)="onAddQuestionBelowButtonClick()">
+			<mat-icon (click)="onAddQuestionBelowButtonClick()" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">
 				arrow_drop_down
 			</mat-icon>
-			<mat-icon (click)="onAddQuestionAboveButtonClick( idx )">
+			<mat-icon (click)="onAddQuestionAboveButtonClick( idx )" 
+					matTooltip="nowe pytanie powyżej" [matTooltipShowDelay]="500">
 				arrow_drop_up
 			</mat-icon>
 			<mat-icon color="warn" 
-					  (click)="onDeleteQuestionButtonClick( idx )">
+				  (click)="onDeleteQuestionButtonClick( idx )" matTooltip="usuń pytanie" [matTooltipShowDelay]="500">
 				clear
 			</mat-icon>
 		</mat-card>
-		<!-- questionRef.dataset.questionIndex -->
 	</section>
 
 	<div fxLayout="row">

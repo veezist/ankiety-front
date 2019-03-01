@@ -15,6 +15,7 @@ export class CreatorQuestionComponent implements OnInit
 
 	private answerTypes: string[] = answerTypes;
 	private selectedAnswerType: string = 'xd';
+	private QuestionTYPES = Question.TYPES;
 	/* private answers: Array<CreatorAnswerComponent> = []; */
 
 	constructor() { }
@@ -35,7 +36,7 @@ export class CreatorQuestionComponent implements OnInit
 			this.question.answers.push(newAnswer);
 		} */
 		const newAnswer = new Answer();
-			newAnswer.type = '1ofn';
+			newAnswer.type = this.QuestionTYPES.OneOfN;
 
 			this.question.answers.push(newAnswer);
 	}
