@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Answer } from 'src/app/models/survey/answer';
 import { Question } from 'src/app/models/survey/question';
 
@@ -9,10 +9,8 @@ import { Question } from 'src/app/models/survey/question';
 })
 export class CreatorAnswerComponent implements OnInit
 {
-  @Input() 
-  public answerType: string;
-  @Input()
-  public emiter = new EventEmitter();
+  @Output()
+  public answerOrderedToDelete = new EventEmitter<Answer>();
 
   @Input()
   private answer: Answer;
@@ -28,6 +26,6 @@ export class CreatorAnswerComponent implements OnInit
 
   onRemoveAnswerClick()
   {
-    this.emiter.emit();
+    this.answerOrderedToDelete.emit(this.answer);
   }
 }

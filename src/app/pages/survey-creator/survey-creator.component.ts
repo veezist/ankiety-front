@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material';
 import { SurveySavedDialogComponent } from './survey-saved-dialog/survey-saved-dialog.component';
 import { CreatorQuestionComponent } from './survey/creator-question/creator-question.component';
 import { Question } from '../../models/survey/question';
+import { Answer } from 'src/app/models/survey/answer';
 
 @Component({
 	selector: 'app-survey-creator',
@@ -35,6 +36,16 @@ export class SurveyCreatorComponent implements OnInit
 		this.questions.push(new Question());
 	}
 
+	onQuestionTypeChange(index: number)
+	{
+		this.questions[index].answers.length = 0;
+		
+		if (this.questions[index].type === Question.TYPES.Text)
+		{
+			this.questions[index].answers.push(new Answer(Question.TYPES.Text));
+		}
+	}
+
 	onSaveSurveyButtonClicked()
 	{
 		this.dialog.open(SurveySavedDialogComponent);
@@ -52,7 +63,6 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddQuestionAboveButtonClick(index: any)
 	{
-		console.log(index);
 		this.questions.splice(index, 0, new Question(this.questions[index].type));
 	}
 

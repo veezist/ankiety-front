@@ -21,14 +21,14 @@
 		<app-creator-survey-question [question]="questions[idx]"></app-creator-survey-question>
 
 		<div class="survey-question-type" (click)="logSth()">
-			<select [(ngModel)]="question.type" disableUnderline>
+			<select [(ngModel)]="question.type" (change)="onQuestionTypeChange(idx)" disableUnderline>
 				<option> {{QuestionTYPES.OneOfN}} </option>
 				<option> {{QuestionTYPES.Text}} </option>
 			</select>
 		</div>
 
 		<mat-card class="survey-question-options">
-			<mat-icon dnd-sortable-handle matTooltip="przemieść pytanie" [matTooltipShowDelay]="500">
+			<mat-icon dnd-sortable-handle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
 				drag_handle
 			</mat-icon>
 			<mat-icon (click)="onAddQuestionBelowButtonClick()" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">

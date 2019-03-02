@@ -1,14 +1,20 @@
 <mat-list-item class="answer-container">
-	<mat-form-field class="answer-content" *ngIf="answerType === QuestionTYPES.Text">
-		<input matInput placeholder="treść odpowiedzi">
-	</mat-form-field>
+	<div *ngIf="answer.type === QuestionTYPES.OneOfN">
+		<mat-checkbox class="one-of-n-checkbox" color="primary">
+		</mat-checkbox>
+		<mat-form-field [floatLabel]="'never'">
+			<input matInput placeholder="treść odpowiedzi">
+		</mat-form-field>
+		<div class="answer-suffix" fxLayout="row">
+			<span class="answer-suffix-remove">
+				<mat-icon color="warn" style="cursor: pointer;" (click)="onRemoveAnswerClick()"> clear </mat-icon>
+			</span>
+		</div>
+	</div>
 
-	<mat-checkbox *ngIf="answerType === QuestionTYPES.OneOfN" class="answer-content" color="primary">
-		<input matInput class="answer-content-checkbox-input" placeholder="treść odpowiedzi">
-	</mat-checkbox>
-
-	<div class="answer-suffix" fxLayout="row">
-		<!-- <span class="answer-suffix-type"><mat-icon> create </mat-icon></span> -->
-		<span class="answer-suffix-remove"><mat-icon color="warn" style="cursor: pointer;" (click)="onRemoveAnswerClick()"> clear </mat-icon></span>
+	<div *ngIf="answer.type === QuestionTYPES.Text" class="text-container">
+		<mat-form-field class="text-field" [floatLabel]="'never'">
+			<input matInput placeholder="treść odpowiedzi">
+		</mat-form-field>
 	</div>
 </mat-list-item>

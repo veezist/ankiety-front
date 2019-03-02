@@ -3,20 +3,22 @@
 	position: relative;
 }
 
-.answer-content
+.one-of-n-checkbox
+{
+	margin-left: 2px;
+	margin-right: 7px;
+}
+
+.text-container
 {
 	width: 100%;
 }
 
-.answer-content-checkbox-input
+.text-field
 {
 	width: 100%;
-	
-	padding-top: 5px;
-	padding-left: 10px;
-
-	border-bottom: 1px solid gray;
 }
+
 .answer-suffix
 {
 	position: absolute;
@@ -27,4 +29,14 @@
 .answer-suffix-remove
 {
 	margin-left: 5px;
+}
+
+::ng-deep .mat-list-item-content
+{
+  padding-left: 0px !important;
+}
+
+::ng-deep .mat-checkbox-inner-container
+{
+	margin-top: 12px !important;
 }

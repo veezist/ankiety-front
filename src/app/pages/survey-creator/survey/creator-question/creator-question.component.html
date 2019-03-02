@@ -10,16 +10,14 @@
 				Dodaj odpowiedź
 			</button>
 		</div>
-		<mat-list *ngFor="let answer of question.answers">
-			<app-survey-creator-answer class="answer-container" [answerType]="answer.type"></app-survey-creator-answer>
-		</mat-list>
 	</div>
-
-	<div *ngIf="question.type == QuestionTYPES.Text">
-		<mat-form-field style="width:100%;">
-			<input matInput placeholder="Treść odpowiedzi">
-		</mat-form-field>
-	</div>
+	
+	<mat-list *ngFor="let answer of question.answers">
+		<app-survey-creator-answer class="answer-container" 
+			[answer]="answer" 
+			(answerOrderedToDelete)="onAnswerOrederedToDelete($event)">
+		</app-survey-creator-answer>
+	</mat-list>
 </mat-card>
 
 		<!-- <mat-select class="answer-option-select-type" #selectedType placeholder="Wybierz typ">

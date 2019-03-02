@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CreatorAnswerComponent } from '../creator-answer/creator-answer.component';
 import { Question } from 'src/app/models/survey/question';
-import { Answer, answerTypes } from 'src/app/models/survey/answer';
+import { Answer } from 'src/app/models/survey/answer';
 
 @Component({
   selector: 'app-creator-survey-question',
@@ -13,10 +13,7 @@ export class CreatorQuestionComponent implements OnInit
 	@Input()
 	public question: Question;
 
-	private answerTypes: string[] = answerTypes;
-	private selectedAnswerType: string = 'xd';
 	private QuestionTYPES = Question.TYPES;
-	/* private answers: Array<CreatorAnswerComponent> = []; */
 
 	constructor() { }
 
@@ -24,20 +21,17 @@ export class CreatorQuestionComponent implements OnInit
 	{
 	}
 
-	onAddAnswerButtonClicked(selectedType: string)
+	onAddAnswerButtonClicked()
 	{
-		/* console.log('question: ' + selectedType); */
-
-		/* if (selectedType !== undefined)
-		{
-			const newAnswer = new Answer();
-			newAnswer.type = selectedType;
-
-			this.question.answers.push(newAnswer);
-		} */
 		const newAnswer = new Answer();
-			newAnswer.type = this.QuestionTYPES.OneOfN;
+		newAnswer.type = this.question.type;
 
-			this.question.answers.push(newAnswer);
+		this.question.answers.push(newAnswer);
+	}
+
+	onAnswerOrederedToDelete(answerToDelete: Answer)
+	{
+		const index = this.question.answers.indexOf(answerToDelete);
+    this.question.answers.splice(index, 1);
 	}
 }

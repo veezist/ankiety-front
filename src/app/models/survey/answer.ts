@@ -1,4 +1,4 @@
-export const answerTypes = ['tekstowa', '1 z N'];
+import { Question } from "./question";
 
 export class Answer
 {
@@ -6,4 +6,9 @@ export class Answer
 	isSelected: boolean = false;
 
 	text?: string;
+
+	constructor(answerType = Question.TYPES.OneOfN)
+	{
+		this.type = answerType;
+	}
 }

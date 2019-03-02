@@ -16,7 +16,7 @@ export namespace Question
 {
 	export enum TYPES
 	{
-		OneOfN = '1 z N',
+		OneOfN = 'x z N',
 		Text = 'Tekst'
 	}
 }
