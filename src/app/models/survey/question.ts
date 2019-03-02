@@ -2,13 +2,18 @@ import { Answer } from "./answer";
 
 export class Question
 {
-	type: string;
+	type: Question.TYPES;
 	text: string;
 	answers: Array<Answer> = [];
 
-	constructor(type: string = Question.TYPES.OneOfN)
+	constructor(type = Question.TYPES.OneOfN)
 	{
 		this.type = type;
+
+		if (this.type === Question.TYPES.Text)
+		{
+			this.answers.push(new Answer(Question.TYPES.Text));
+		}
 	}
 }
 

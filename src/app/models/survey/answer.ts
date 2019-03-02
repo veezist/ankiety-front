@@ -1,5 +1,3 @@
-import { Question } from "./question";
-
 export class Answer
 {
 	type: string;
@@ -7,7 +5,7 @@ export class Answer
 
 	text?: string;
 
-	constructor(answerType = Question.TYPES.OneOfN)
+	constructor(answerType: string)
 	{
 		this.type = answerType;
 	}
