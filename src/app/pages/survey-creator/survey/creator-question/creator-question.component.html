@@ -3,7 +3,7 @@
 		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania">
 	</mat-form-field>
 
-	<div *ngIf="question.type === QuestionTYPES.XOfN || question.type === QuestionTYPES.OneOfN">
+	<div *ngIf="question.type !== QuestionTYPES.Text">
 		<div class="answer-options" fxLayout="row">
 			<button class="answer-option-add-answer" mat-stroked-button type="button" color="primary"
 				(click)="onAddAnswerButtonClicked(question.type)">
@@ -12,7 +12,7 @@
 		</div>
 	</div>
 	
-	<mat-radio-group [(ngModel)]="selectedAnswerIndex">
+	<mat-radio-group [(ngModel)]="question.selectedAnswerIndex">
 		<mat-list *ngFor="let answer of question.answers">
 			<app-survey-creator-answer class="answer-container" 
 				[answer]="answer" 

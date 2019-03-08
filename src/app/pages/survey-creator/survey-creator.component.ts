@@ -38,11 +38,11 @@ export class SurveyCreatorComponent implements OnInit
 
 	onQuestionTypeChange(index: number)
 	{
-		this.questions[index].answers.length = 0;
+		this.questions[index].deleteAllAnswers();
 		
 		if (this.questions[index].type === Question.TYPES.Text)
 		{
-			this.questions[index].answers.push(new Answer(Question.TYPES.Text));
+			this.questions[index].addAnswer(Question.TYPES.Text);
 		}
 	}
 
@@ -56,9 +56,12 @@ export class SurveyCreatorComponent implements OnInit
 		this.questions = [];
 	}
 
-	onAddQuestionBelowButtonClick()
+	onAddQuestionBelowButtonClick(questionIndex: number)
 	{
-		this.questions.push(new Question(this.questions[this.questions.length - 1].type));
+		console.log('this.questions.length === ', this.questions.length);
+		console.log('questionIndex === ', questionIndex);
+		// this.questions.push(new Question(this.questions[this.questions.length - 1].type));
+		this.questions.splice(questionIndex + 1, 0, new Question(this.questions[questionIndex].type));
 	}
 
 	onAddQuestionAboveButtonClick(index: any)

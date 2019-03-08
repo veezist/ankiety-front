@@ -23,14 +23,11 @@ export class CreatorQuestionComponent implements OnInit
 
 	onAddAnswerButtonClicked(questionType: Question.TYPES)
 	{
-		const newAnswer = new Answer(questionType);
-
-		this.question.answers.push(newAnswer);
+		this.question.addAnswer(questionType);
 	}
 
 	onAnswerOrederedToDelete(answerToDelete: Answer)
 	{
-		const index = this.question.answers.indexOf(answerToDelete);
-    this.question.answers.splice(index, 1);
+		this.question.deleteAnswer(answerToDelete);
 	}
 }

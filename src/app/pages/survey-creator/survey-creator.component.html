@@ -25,6 +25,7 @@
 				<option> {{QuestionTYPES.Text}} </option>
 				<option> {{QuestionTYPES.OneOfN}} </option>
 				<option> {{QuestionTYPES.XOfN}} </option>
+				<option> {{QuestionTYPES.Condition}} </option>
 			</select>
 		</div>
 
@@ -32,7 +33,7 @@
 			<mat-icon dnd-sortable-handle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
 				drag_handle
 			</mat-icon>
-			<mat-icon (click)="onAddQuestionBelowButtonClick()" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">
+			<mat-icon (click)="onAddQuestionBelowButtonClick( idx )" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">
 				arrow_drop_down
 			</mat-icon>
 			<mat-icon (click)="onAddQuestionAboveButtonClick( idx )" 
@@ -58,35 +59,3 @@
 	</div>
 
 </mat-card>
-
-<!-- 
-<button (click)="addNewCompany()">Add new Company</button><br><br>
-<form [formGroup]="myForm">
-  <div formArrayName="companies">
-    <div *ngFor="let comp of myForm.get('companies').controls; let i=index">
-    <fieldset>
-      <legend><h3>COMPANY {{i+1}}: </h3></legend>
-      <div [formGroupName]="i">
-        <label>Company Name: </label>
-        <input formControlName="company" /><span><button (click)="deleteCompany(i)">Delete Company</button></span>
-        <div formArrayName="projects">
-          <div *ngFor="let project of comp.get('projects').controls; let j=index">
-            <fieldset>
-            <legend><h4>PROJECT {{j+1}}</h4></legend>
-            <div [formGroupName]="j">
-              <label>Project Name:</label>
-              <input formControlName="projectName" /><span><button (click)="deleteProject(comp.controls.projects, j)">Delete Project</button></span>
-            </div>
-            </fieldset>
-          </div>
-          <button (click)="addNewProject(comp.controls.projects)">Add new Project</button>
-        </div>
-      </div>
-    </fieldset>
-    </div>
-  </div><br>
-  
-</form>
-
-<pre>{{myForm.value | json}}</pre>
- -->

@@ -1,12 +1,13 @@
 export class Answer
 {
+	id: number;
 	type: string;
+	text?: string;
 	isSelected: boolean = false;
 
-	text?: string;
-
-	constructor(answerType: string)
+	constructor(id: number, answerType: string)
 	{
+		this.id = id;
 		this.type = answerType;
 	}
 }

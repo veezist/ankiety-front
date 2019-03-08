@@ -6,7 +6,7 @@
 	</div>
 
 	<div *ngIf="answer.type === QuestionTYPES.OneOfN">
-		<mat-radio-button class="one-of-n-checkbox" color="primary"></mat-radio-button>
+		<mat-radio-button [value]="answer.id" class="one-of-n-checkbox" color="primary"></mat-radio-button>
 		<mat-form-field [floatLabel]="'never'">
 			<input matInput placeholder="treść odpowiedzi">
 		</mat-form-field>
@@ -20,6 +20,18 @@
 	<div *ngIf="answer.type === QuestionTYPES.XOfN">
 		<mat-checkbox class="one-of-n-checkbox" color="primary">
 		</mat-checkbox>
+		<mat-form-field [floatLabel]="'never'">
+			<input matInput placeholder="treść odpowiedzi">
+		</mat-form-field>
+		<div class="answer-suffix" fxLayout="row">
+			<span class="answer-suffix-remove">
+				<mat-icon color="warn" style="cursor: pointer;" (click)="onRemoveAnswerClick()"> clear </mat-icon>
+			</span>
+		</div>
+	</div>
+
+	<div *ngIf="answer.type === QuestionTYPES.Condition">
+		<mat-radio-button [value]="answer.id" class="one-of-n-checkbox" color="primary"></mat-radio-button>
 		<mat-form-field [floatLabel]="'never'">
 			<input matInput placeholder="treść odpowiedzi">
 		</mat-form-field>
