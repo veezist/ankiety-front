@@ -20,7 +20,8 @@ import {
   MatTooltipModule,
   MatSnackBarModule,
   MatOptionModule,
-  MatSelectModule
+  MatSelectModule,
+  MatRadioModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -81,7 +82,8 @@ import { DndModule } from 'ng2-dnd';
     MatTooltipModule,
     MatSnackBarModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,

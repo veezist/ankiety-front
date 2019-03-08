@@ -22,8 +22,9 @@
 
 		<div class="survey-question-type" (click)="logSth()">
 			<select [(ngModel)]="question.type" (change)="onQuestionTypeChange(idx)" disableUnderline>
-				<option> {{QuestionTYPES.OneOfN}} </option>
 				<option> {{QuestionTYPES.Text}} </option>
+				<option> {{QuestionTYPES.OneOfN}} </option>
+				<option> {{QuestionTYPES.XOfN}} </option>
 			</select>
 		</div>
 

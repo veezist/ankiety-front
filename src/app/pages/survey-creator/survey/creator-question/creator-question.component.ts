@@ -21,10 +21,9 @@ export class CreatorQuestionComponent implements OnInit
 	{
 	}
 
-	onAddAnswerButtonClicked()
+	onAddAnswerButtonClicked(questionType: Question.TYPES)
 	{
-		const newAnswer = new Answer(Question.TYPES.OneOfN);
-		newAnswer.type = this.question.type;
+		const newAnswer = new Answer(questionType);
 
 		this.question.answers.push(newAnswer);
 	}

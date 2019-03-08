@@ -6,7 +6,7 @@ export class Question
 	text: string;
 	answers: Array<Answer> = [];
 
-	constructor(type = Question.TYPES.OneOfN)
+	constructor(type = Question.TYPES.Text)
 	{
 		this.type = type;
 
@@ -21,7 +21,8 @@ export namespace Question
 {
 	export enum TYPES
 	{
-		OneOfN = 'x z N',
-		Text = 'Tekst'
+		Text = 'Tekst',
+		XOfN = 'x z N',
+		OneOfN = '1 z N'
 	}
 }

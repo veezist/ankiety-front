@@ -3,10 +3,10 @@
 		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania">
 	</mat-form-field>
 
-	<div *ngIf="question.type === QuestionTYPES.OneOfN">
+	<div *ngIf="question.type === QuestionTYPES.XOfN || question.type === QuestionTYPES.OneOfN">
 		<div class="answer-options" fxLayout="row">
 			<button class="answer-option-add-answer" mat-stroked-button type="button" color="primary"
-				(click)="onAddAnswerButtonClicked( 'avs' )">
+				(click)="onAddAnswerButtonClicked(question.type)">
 				Dodaj odpowiedź
 			</button>
 		</div>
