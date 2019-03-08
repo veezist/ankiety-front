@@ -5,6 +5,7 @@ export class Question
 	type: Question.TYPES;
 	text: string;
 	answers: Array<Answer> = [];
+	selectedAnswerIndex: number;
 
 	constructor(type = Question.TYPES.Text)
 	{
@@ -23,6 +24,7 @@ export namespace Question
 	{
 		Text = 'Tekst',
 		XOfN = 'x z N',
-		OneOfN = '1 z N'
+		OneOfN = '1 z N',
+		Condition = 'Cond.'
 	}
 }

@@ -12,16 +12,12 @@
 		</div>
 	</div>
 	
-	<mat-list *ngFor="let answer of question.answers">
-		<app-survey-creator-answer class="answer-container" 
-			[answer]="answer" 
-			(answerOrderedToDelete)="onAnswerOrederedToDelete($event)">
-		</app-survey-creator-answer>
-	</mat-list>
+	<mat-radio-group [(ngModel)]="selectedAnswerIndex">
+		<mat-list *ngFor="let answer of question.answers">
+			<app-survey-creator-answer class="answer-container" 
+				[answer]="answer" 
+				(answerOrderedToDelete)="onAnswerOrederedToDelete($event)">
+			</app-survey-creator-answer>
+		</mat-list>
+	</mat-radio-group>
 </mat-card>
-
-		<!-- <mat-select class="answer-option-select-type" #selectedType placeholder="Wybierz typ">
-			<mat-option *ngFor="let answerType of answerTypes" [value]="answerType">
-				{{ answerType }}
-			</mat-option>
-		</mat-select> -->
