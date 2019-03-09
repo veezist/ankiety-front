@@ -58,10 +58,17 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddQuestionBelowButtonClick(questionIndex: number)
 	{
-		console.log('this.questions.length === ', this.questions.length);
-		console.log('questionIndex === ', questionIndex);
+		// console.log('this.questions.length === ', this.questions.length);
+		// console.log('questionIndex === ', questionIndex);
 		// this.questions.push(new Question(this.questions[this.questions.length - 1].type));
-		this.questions.splice(questionIndex + 1, 0, new Question(this.questions[questionIndex].type));
+		if (this.questions[questionIndex].type === Question.TYPES.Condition)
+		{
+			this.questions[questionIndex].addConditionalQuestion(new Question(Question.TYPES.Text));
+		}
+		else
+		{
+			this.questions.splice(questionIndex + 1, 0, new Question(this.questions[questionIndex].type));
+		}
 	}
 
 	onAddQuestionAboveButtonClick(index: any)
@@ -70,6 +77,21 @@ export class SurveyCreatorComponent implements OnInit
 	}
 
 	onDeleteQuestionButtonClick(index: any)
+	{
+		this.questions.splice(index, 1);
+	}
+
+	onAddCondQuestionBelowButtonClick(upperQuestionIndex: number, questionIndex: number)
+	{
+		this.questions[upperQuestionIndex].addConditionalQuestionAtIndex(new Question(Question.TYPES.Text), questionIndex + 1);
+	}
+
+	onAddCondQuestionAboveButtonClick(upperQuestionIndex: number, questionIndex: number)
+	{
+		this.questions[upperQuestionIndex].addConditionalQuestionAtIndex(new Question(Question.TYPES.Text), questionIndex);
+	}
+
+	onDeleteCondQuestionButtonClick(index: any)
 	{
 		this.questions.splice(index, 1);
 	}

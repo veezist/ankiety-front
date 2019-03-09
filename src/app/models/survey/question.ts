@@ -6,8 +6,8 @@ export class Question
 	private text: string;
 	private answers: Array<Answer> = [];
 	private answerIdCount = 0;
-	private selectedAnswerIndex: String;
-	private conditionalQuestions: Array<Array<Question>> = null;
+	private selectedAnswerIndex: number;
+	private conditionalQuestions: Array<Array<Question>> = new Array<Array<Question>>();
 
 	constructor(type = Question.TYPES.Text)
 	{
@@ -33,6 +33,21 @@ export class Question
 	public deleteAllAnswers()
 	{
 		this.answers.length = 0;
+	}
+
+	public addConditionalQuestion(question: Question)
+	{
+		// console.log(this.conditionalQuestions[this.selectedAnswerIndex]);
+		if (this.conditionalQuestions[this.selectedAnswerIndex] === undefined)
+		{
+			this.conditionalQuestions[this.selectedAnswerIndex] = new Array<Question>();
+		}
+		this.conditionalQuestions[this.selectedAnswerIndex].push(question);
+	}
+
+	public addConditionalQuestionAtIndex(question: Question, index: number)
+	{
+		this.conditionalQuestions[this.selectedAnswerIndex].splice(index, 0, question);
 	}
 }
 

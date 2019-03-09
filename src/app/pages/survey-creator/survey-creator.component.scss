@@ -27,6 +27,16 @@
 	margin-bottom: 20px;
 }
 
+.survey-conditional-question-container
+{
+	margin-top: 10px;
+	//margin-bottom: 10px;
+	.mat-card
+	{
+		background-color: linen;
+	}
+}
+
 .survey-question-container:hover
 {
 	.survey-question-type
