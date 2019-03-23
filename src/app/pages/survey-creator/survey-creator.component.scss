@@ -2,6 +2,7 @@
 {
 	width: 80%;
 	margin: auto;
+	margin-bottom: 50px;
 	border: 1px solid gray;
 }
 
@@ -22,9 +23,27 @@
 	font-size: 24px;
 }
 
-.survey-question-container
+.question-container
 {
 	margin-bottom: 20px;
+}
+
+.question-container:nth-last-of-type(2)
+{
+	margin-bottom: 0px;
+}
+
+.condQuestion-container
+{
+	margin-top: 10px;
+	//margin-bottom: 10px;
+	outline: 3px solid #673ab7;
+	outline-offset: -2px;
+	outline-style: double;
+	.mat-card
+	{
+		background-color: linen;
+	}
 }
 
 .survey-conditional-question-container
@@ -35,48 +54,6 @@
 	{
 		background-color: linen;
 	}
-}
-
-.survey-question-container:hover
-{
-	.survey-question-type
-	{
-		display: block;
-	}
-}
-
-.survey-question-container:last-of-type
-{
-	margin-bottom: 0px;
-}
-
-.survey-question-type
-{
-	display: none;
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	padding: 0px;
-	select
-	{
-		background-color: transparent;
-		border: none;
-	}
-}
-
-.survey-question-options
-{
-	position: absolute;
-	top: 0%;
-	right: 0%;
-
-	padding: 0px;
-	padding-top: 5px;
-}
-
-.survey-question-options:hover
-{
-	cursor: pointer;
 }
 
 #publish-survey-button

@@ -1,0 +1,56 @@
+.survey-question-container
+{
+	margin-bottom: 20px;
+}
+
+.survey-question-container:hover
+{
+	.survey-question-type
+	{
+		display: block;
+	}
+}
+
+.survey-question-container:last-of-type
+{
+	margin-bottom: 0px;
+}
+
+.survey-question-type
+{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	padding: 0px;
+	select
+	{
+		background-color: transparent;
+		border: none;
+	}
+}
+
+.survey-question-options
+{
+	position: absolute;
+	top: 0%;
+	right: 0%;
+
+	padding: 0px;
+	padding-top: 5px;
+}
+
+.survey-question-options:hover
+{
+	cursor: pointer;
+}
+
+.survey-question-number
+{
+	position: absolute;
+	bottom: 0%;
+	right: 0%;
+
+	padding: 0px;
+	padding-right: 5px;
+}

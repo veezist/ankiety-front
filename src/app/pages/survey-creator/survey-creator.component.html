@@ -15,6 +15,78 @@
 		</button>
 	</mat-card>
 
+	<div *ngFor="let question of questions; let idx=index" class="question-container">
+		<app-creator-question-container 
+			[question]="question"
+			[idx]="idx"
+			(questionTypeChange)="onQuestionTypeChange($event)"
+			(addQuestionBelowButtonClick)="onAddQuestionBelowButtonClick($event)"
+			(addQuestionAboveButtonClick)="onAddQuestionAboveButtonClick($event)"
+			(deleteQuestionButtonClick)="onDeleteQuestionButtonClick($event)"
+		></app-creator-question-container>
+		<div *ngFor="let condQuestion of question.conditionalQuestions[question.selectedAnswerIndex]; 
+					let condIdx=index"
+					class="condQuestion-container">
+			<app-creator-question-container
+				[question]="condQuestion"
+				[idx]="condIdx"
+				(questionTypeChange)="onQuestionTypeChange($event)"
+				(addQuestionBelowButtonClick)="onAddCondQuestionBelowButtonClick(idx, $event)"
+				(addQuestionAboveButtonClick)="onAddCondQuestionAboveButtonClick(idx, $event)"
+				(deleteQuestionButtonClick)="onDeleteQuestionButtonClick($event)"
+			></app-creator-question-container>
+		</div>
+	</div>
+
+	<div fxLayout="row">
+		<button id="save-survey-button" mat-raised-button type="button" color="primary"
+				(click)="onSaveSurveyButtonClicked()">
+		Zapisz Zmiany
+		</button>
+		<button id="delete-survey-button" mat-raised-button type="button" color="warn" 
+				(click)="onDeleteSurveyButtonClick()">
+		Usuń Ankietę
+		</button>
+	</div>
+
+</mat-card>
+
+<!-- 
+	<div *ngIf="question.conditionalQuestions[question.selectedAnswerIndex] !== undefined" class="survey-conditional-question-container">
+			<section class="survey-conditional-question-container"
+				*ngFor="let question2 of question.conditionalQuestions[question.selectedAnswerIndex]; let idx2=index"
+				style="position: relative;" [attr.data-question-index]="idx2">
+	
+				<app-creator-survey-question [question]="question2"></app-creator-survey-question>
+	
+				<div class="survey-question-type" (click)="logSth()">
+					<select [(ngModel)]="question2.type" (change)="onQuestionTypeChange(idx2)" disableUnderline>
+						<option> {{QuestionTYPES.Text}} </option>
+						<option> {{QuestionTYPES.OneOfN}} </option>
+						<option> {{QuestionTYPES.XOfN}} </option>
+						<option> {{QuestionTYPES.Condition}} </option>
+					</select>
+				</div>
+	
+				<mat-card class="survey-question-options">
+					<mat-icon matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
+						drag_handle
+					</mat-icon>
+					<mat-icon (click)="onAddCondQuestionBelowButtonClick( idx, idx2 )" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">
+						arrow_drop_down
+					</mat-icon>
+					<mat-icon (click)="onAddCondQuestionAboveButtonClick( idx, idx2 )" 
+							matTooltip="nowe pytanie powyżej" [matTooltipShowDelay]="500">
+						arrow_drop_up
+					</mat-icon>
+					<mat-icon color="warn" 
+							(click)="onDeleteQuestionButtonClick( idx2 )" matTooltip="usuń pytanie" [matTooltipShowDelay]="500">
+						clear
+					</mat-icon>
+				</mat-card>
+			</section>
+			</div> -->
+	<!--
 	<span *ngFor="let question of questions; let idx=index" class="survey-question-container">
 		<section class="survey-question-container"
 			style="position: relative;" [attr.data-question-index]="idx" dnd-sortable [sortableIndex]="idx" >
@@ -83,16 +155,4 @@
 		</section>
 		</div>
 	</span>
-
-	<div fxLayout="row">
-		<button id="save-survey-button" mat-raised-button type="button" color="primary"
-				(click)="onSaveSurveyButtonClicked()">
-		Zapisz Zmiany
-		</button>
-		<button id="delete-survey-button" mat-raised-button type="button" color="warn" 
-				(click)="onDeleteSurveyButtonClick()">
-		Usuń Ankietę
-		</button>
-	</div>
-
-</mat-card>
+	 -->

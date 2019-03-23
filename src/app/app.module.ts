@@ -42,6 +42,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthHttpInterceptor } from './other/auth-http-interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { DndModule } from 'ng2-dnd';
+import { CreatorQuestionContainerComponent } from './pages/survey-creator/survey/creator-question-container/creator-question-container.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { DndModule } from 'ng2-dnd';
     SurveyCreatorComponent,
     SurveySavedDialogComponent,
     CreatorAnswerComponent,
-    CreatorQuestionComponent
+    CreatorQuestionComponent,
+    CreatorQuestionContainerComponent
   ],
   imports: [
     BrowserModule,
