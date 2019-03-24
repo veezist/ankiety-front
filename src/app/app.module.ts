@@ -43,6 +43,9 @@ import { AuthHttpInterceptor } from './other/auth-http-interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { DndModule } from 'ng2-dnd';
 import { CreatorQuestionContainerComponent } from './pages/survey-creator/survey/creator-question-container/creator-question-container.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { EmailChangeComponent } from './pages/profile/email-change/email-change.component';
+import { PasswordChangeComponent } from './pages/profile/password-change/password-change.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { CreatorQuestionContainerComponent } from './pages/survey-creator/survey
     SurveySavedDialogComponent,
     CreatorAnswerComponent,
     CreatorQuestionComponent,
-    CreatorQuestionContainerComponent
+    CreatorQuestionContainerComponent,
+    ProfileComponent,
+    EmailChangeComponent,
+    PasswordChangeComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,9 @@ import { LoginComponent } from './pages/authentication/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ForgotPasswordComponent } from './pages/authentication/forgot-password/forgot-password.component';
 import { SurveyCreatorComponent } from './pages/survey-creator/survey-creator.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { EmailChangeComponent } from './pages/profile/email-change/email-change.component';
+import { PasswordChangeComponent } from './pages/profile/password-change/password-change.component';
 
 const routes: Routes = [
    { path: 'creator', component: SurveyCreatorComponent }
@@ -14,8 +17,13 @@ const routes: Routes = [
   ,{ path: 'register', component: RegisterComponent }
   ,{ path: 'forgot-password', component: ForgotPasswordComponent }
   ,{ path: 'surveys', component: SurveyListComponent }
+  ,{ path: 'email_change', component: EmailChangeComponent}
+  ,{ path: 'password_change', component: PasswordChangeComponent}
   ,{ path: '', component: HomeComponent }
-  ,{ path: '**', redirectTo: 'surveys', pathMatch: 'full' }
+  ,{ path: 'profile', component: ProfileComponent }
+  ,{ path: '**', redirectTo: 'surveys', pathMatch: 'full'
+ }
+  
 ];
 
 @NgModule({
