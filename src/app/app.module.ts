@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import {
   MatButtonModule,
@@ -75,6 +76,7 @@ import { PasswordChangeComponent } from './pages/profile/password-change/passwor
     FlexLayoutModule,
     BrowserAnimationsModule,
     FormsModule,
+    DragDropModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,

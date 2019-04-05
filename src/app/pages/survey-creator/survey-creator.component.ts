@@ -4,6 +4,7 @@ import { SurveySavedDialogComponent } from './survey-saved-dialog/survey-saved-d
 import { CreatorQuestionComponent } from './survey/creator-question/creator-question.component';
 import { Question } from '../../models/survey/question';
 import { Answer } from 'src/app/models/survey/answer';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
 	selector: 'app-survey-creator',
@@ -14,6 +15,7 @@ export class SurveyCreatorComponent implements OnInit
 {
 	private questions: Array<Question> = [];
 	private QuestionTYPES = Question.TYPES;
+	listTwo: Array<string> = ['Coffee', 'Orange Juice', 'Red Wine', 'Unhealty drink!', 'Water'];
 
 	constructor(private dialog: MatDialog) { }
 
@@ -36,13 +38,35 @@ export class SurveyCreatorComponent implements OnInit
 		this.questions.push(new Question());
 	}
 
-	onQuestionTypeChange(index: number)
+	onQuestionTypeChange(event: { index: number, previousValue: string })
 	{
+		let index = event.index;
+
 		this.questions[index].deleteAllAnswers();
+		// console.log(this.questions[index]);
+		if (event.previousValue === this.QuestionTYPES.Condition)
+		{
+			// console.log('test');
+			this.questions[index].conditionalQuestions = new Array<Array<Question>>();
+		}
 		
 		if (this.questions[index].type === Question.TYPES.Text)
 		{
 			this.questions[index].addAnswer(Question.TYPES.Text);
+		}
+	}
+
+	onConditionalQuestionTypeChange(event: { index: number, previousValue: string }, index: number)
+	{
+		let condIndex = event.index;
+		let q = this.questions[index];
+		let cQ = q.conditionalQuestions[q.selectedAnswerIndex][condIndex];
+		
+		cQ.deleteAllAnswers();
+		
+		if (cQ.type === Question.TYPES.Text)
+		{
+			cQ.addAnswer(Question.TYPES.Text);
 		}
 	}
 
@@ -63,7 +87,10 @@ export class SurveyCreatorComponent implements OnInit
 		// this.questions.push(new Question(this.questions[this.questions.length - 1].type));
 		if (this.questions[questionIndex].type === Question.TYPES.Condition)
 		{
-			this.questions[questionIndex].addConditionalQuestion(new Question(Question.TYPES.Text));
+			if (this.questions[questionIndex].selectedAnswerIndex !== undefined)
+			{
+				this.questions[questionIndex].addConditionalQuestion(new Question(Question.TYPES.Text));
+			}
 		}
 		else
 		{
@@ -81,6 +108,14 @@ export class SurveyCreatorComponent implements OnInit
 		this.questions.splice(index, 1);
 	}
 
+	onDeleteCondoQuestionButtonClick(index: number, condIndex: number)
+	{
+		let q = this.questions[index];
+		let cQs = q.conditionalQuestions[q.selectedAnswerIndex];
+
+		cQs.splice(condIndex, 1);
+	}
+
 	onAddCondQuestionBelowButtonClick(upperQuestionIndex: number, questionIndex: number)
 	{
 		this.questions[upperQuestionIndex].addConditionalQuestionAtIndex(new Question(Question.TYPES.Text), questionIndex + 1);
@@ -95,6 +130,16 @@ export class SurveyCreatorComponent implements OnInit
 	{
 		this.questions.splice(index, 1);
 	}
+
+	dropQuestion(event: CdkDragDrop<string[]>)
+	{
+    moveItemInArray(this.questions, event.previousIndex, event.currentIndex);
+	}
+	
+	dropConditionalQuestion(event: CdkDragDrop<string[]>, question: Question)
+	{
+    moveItemInArray(question.conditionalQuestions[question.selectedAnswerIndex], event.previousIndex, event.currentIndex);
+  }
 }
 
 /* import { Component } from '@angular/core';

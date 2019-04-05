@@ -6,8 +6,8 @@ export class Question
 	private text: string;
 	private answers: Array<Answer> = [];
 	private answerIdCount = 0;
-	private selectedAnswerIndex: number;
-	private conditionalQuestions: Array<Array<Question>> = new Array<Array<Question>>();
+	public selectedAnswerIndex: number;
+	public conditionalQuestions: Array<Array<Question>> = new Array<Array<Question>>();
 
 	constructor(type = Question.TYPES.Text)
 	{

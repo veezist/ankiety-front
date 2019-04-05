@@ -35,15 +35,20 @@
 
 .condQuestion-container
 {
-	margin-top: 10px;
+	margin-top: 20px;
 	//margin-bottom: 10px;
-	outline: 3px solid #673ab7;
-	outline-offset: -2px;
-	outline-style: double;
-	.mat-card
+	// outline: 3px solid #673ab7;
+	// outline-offset: -2px;
+	// outline-style: double;
+	/* .mat-card
 	{
 		background-color: linen;
-	}
+	} */
+}
+
+.condQuestion-list-container
+{
+	outline: rgb(103, 58, 183) dashed 1px;
 }
 
 .survey-conditional-question-container

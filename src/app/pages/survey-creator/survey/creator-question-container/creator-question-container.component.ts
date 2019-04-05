@@ -11,10 +11,12 @@ export class CreatorQuestionContainerComponent implements OnInit
   @Input()
   private question: Question;
   @Input()
+  private isConditional: boolean;
+  @Input()
   private idx: number;
 
   @Output()
-  private questionTypeChange = new EventEmitter<number>();
+  private questionTypeChange = new EventEmitter<Object>();
   @Output()
   private addQuestionBelowButtonClick = new EventEmitter<number>();
   @Output()
@@ -23,16 +25,21 @@ export class CreatorQuestionContainerComponent implements OnInit
   private deleteQuestionButtonClick = new EventEmitter<number>();
 
   private QuestionTYPES = Question.TYPES;
+  private qusetionTypeDelay;
 
   constructor() { }
 
   ngOnInit()
   {
+    this.qusetionTypeDelay = this.question.type;
   }
 
   private onQuestionTypeChange(idx: number)
   {
-    this.questionTypeChange.emit(idx);
+    // console.log('ok: ' + this.question.type);
+    // console.log('delay: ' + this.qusetionTypeDelay);
+    this.questionTypeChange.emit({ index: idx, previousValue: this.qusetionTypeDelay });
+    this.qusetionTypeDelay = this.question.type;
   }
 
   private onAddQuestionBelowButtonClick(idx: number)
@@ -46,5 +53,10 @@ export class CreatorQuestionContainerComponent implements OnInit
   private onDeleteQuestionButtonClick(idx: number)
   {
     this.deleteQuestionButtonClick.emit(idx);
+  }
+
+  private printIndex()
+  {
+    console.log(this.idx);
   }
 }
