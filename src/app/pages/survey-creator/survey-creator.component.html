@@ -32,7 +32,7 @@
 			</mat-icon>
 		</app-creator-question-container>
 
-		<div cdkDropList (cdkDropListDropped)="dropConditionalQuestion($event, question)">
+		<div cdkDropList (cdkDropListDropped)="dropConditionalQuestion($event, question)" id="condQestion-and-sub-questions">
 			<div cdkDrag
 				*ngFor="let condQuestion of question.conditionalQuestions[question.selectedAnswerIndex]; 
 				let condIdx=index"
