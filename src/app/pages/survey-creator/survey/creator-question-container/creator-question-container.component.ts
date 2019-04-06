@@ -36,8 +36,6 @@ export class CreatorQuestionContainerComponent implements OnInit
 
   private onQuestionTypeChange(idx: number)
   {
-    // console.log('ok: ' + this.question.type);
-    // console.log('delay: ' + this.qusetionTypeDelay);
     this.questionTypeChange.emit({ index: idx, previousValue: this.qusetionTypeDelay });
     this.qusetionTypeDelay = this.question.type;
   }
@@ -57,6 +55,6 @@ export class CreatorQuestionContainerComponent implements OnInit
 
   private printIndex()
   {
-    console.log(this.idx);
+    // console.log(this.idx);
   }
 }

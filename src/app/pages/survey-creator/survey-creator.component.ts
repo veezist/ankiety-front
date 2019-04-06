@@ -25,7 +25,7 @@ export class SurveyCreatorComponent implements OnInit
 
 	logSth()
 	{
-		console.log(this.questions);
+		// console.log(this.questions);
 	}
 
 	onPublishSurveyButtonClick()
@@ -43,7 +43,6 @@ export class SurveyCreatorComponent implements OnInit
 		let index = event.index;
 
 		this.questions[index].deleteAllAnswers();
-		// console.log(this.questions[index]);
 		if (event.previousValue === this.QuestionTYPES.Condition)
 		{
 			// console.log('test');
@@ -82,9 +81,6 @@ export class SurveyCreatorComponent implements OnInit
 
 	onAddQuestionBelowButtonClick(questionIndex: number)
 	{
-		// console.log('this.questions.length === ', this.questions.length);
-		// console.log('questionIndex === ', questionIndex);
-		// this.questions.push(new Question(this.questions[this.questions.length - 1].type));
 		if (this.questions[questionIndex].type === Question.TYPES.Condition)
 		{
 			if (this.questions[questionIndex].selectedAnswerIndex !== undefined)

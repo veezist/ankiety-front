@@ -13,9 +13,6 @@
   </div>
 
   <mat-card class="survey-question-options">
-    <!-- <mat-icon cdkDragHandle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
-      drag_handle
-    </mat-icon> -->
     <ng-content select="[slot=drag-handle]"></ng-content>
     <mat-icon (click)="onAddQuestionBelowButtonClick( idx )" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">
       arrow_drop_down
