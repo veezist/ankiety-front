@@ -22,7 +22,9 @@ import {
   MatSnackBarModule,
   MatOptionModule,
   MatSelectModule,
-  MatRadioModule
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -93,7 +95,9 @@ import { PasswordChangeComponent } from './pages/profile/password-change/passwor
     MatSnackBarModule,
     MatOptionModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,

@@ -1,22 +1,57 @@
+<!-- {{ diagnostic }} -->
 <div id="container">
-	<form>
-		<h4>Rejestacja użytkownika</h4>
-		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Nazwa">
-		</div>
-		<div class="form-group">
-			<input type="email" class="form-control" placeholder="Adres email">
-		</div>
-		<div class="form-group">
-			<input type="password" class="form-control" placeholder="Hasło">
-		</div>
-		<div class="form-group">
-			<input type="password" class="form-control" placeholder="Powtórz hasło">
-		</div>
-		<div class="form-check">
-			<input type="checkbox" class="form-check-input" id="exampleCheck1">
-			<label class="form-check-label" for="exampleCheck1">Akceptuję regulamin</label>
-		</div>
-		<button type="submit" class="btn btn-primary">Zarejestruj</button>
-	</form>
+	<div id="form-container">
+		<form #registerForm="ngForm">
+			
+			<div fxLayout="row">
+				<div fxFlex="60%" fxLayout="column">
+						<mat-form-field appearance="outline">
+								<input matInput type="text" placeholder="IMIĘ"
+											required
+											[(ngModel)]="model.name" name="name">
+											<mat-icon matSuffix>*</mat-icon>
+							</mat-form-field>
+							
+							<mat-form-field appearance="outline">
+								<input matInput type="text" placeholder="NAZWISKO"
+											required
+											[(ngModel)]="model.surname" name="surname">
+											<mat-icon matSuffix>*</mat-icon>
+							</mat-form-field>
+				
+							<mat-form-field appearance="outline">
+								<input matInput type="password" placeholder="HASŁO"
+											required
+											[(ngModel)]="model.password" name="password">
+											<mat-icon matSuffix>*</mat-icon>
+							</mat-form-field>
+							
+							<mat-form-field appearance="outline">
+								<input matInput type="email" placeholder="EMAIL"
+											required
+											[(ngModel)]="model.email" name="email">
+								<mat-icon matSuffix>*</mat-icon>
+							</mat-form-field>
+					</div>
+					<div fxFlex="40%" id="datapicker-container">
+						<mat-calendar [selected]="model.dateOfDeletion" 
+													(selectedChange)="model.dateOfDeletion = $event">
+						</mat-calendar>
+						<div id="datapicker-info">usuń konto w terminie</div>
+						<!-- 
+							<mat-form-field>
+								<input matInput [matDatepicker]="picker" placeholder="choose date of deletion">
+								<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+								<mat-datepicker #picker></mat-datepicker>
+							</mat-form-field>
+						-->
+					</div>
+			</div>
+
+			<div fxLayoutAlign="center start">
+				<button mat-stroked-button type="submit" id="submit-button">ZAREJESTRUJ SIĘ</button>
+			</div>
+			
+		</form>
+	</div>
 </div>

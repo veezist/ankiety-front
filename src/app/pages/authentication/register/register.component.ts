@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { UserRegister } from "src/app/models/auth/user-register";
 
 @Component(
 	{
@@ -8,5 +9,13 @@ import { Component } from "@angular/core";
 )
 export class RegisterComponent
 {
-	public formTitle: string = 'Rejestracja';
+	public model = new UserRegister('Ala', 'Makota', '123', 'ala@makota.pl', new Date());
+
+	constructor()
+	{
+		this.model.surname = "";
+		this.model.dateOfDeletion = null;
+	}
+
+	get diagnostic() { return JSON.stringify(this.model); }
 }

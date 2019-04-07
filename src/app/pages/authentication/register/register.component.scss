@@ -1,8 +1,56 @@
-
 div#container
 {
-	width: 300px;
-	height: 500px;
+	color: rgb(141, 141, 141);
+	// width: 300px;
+	// height: 500px;
+	// margin: auto;
+	// margin-top: 100px;
+}
+
+#form-container
+{
+	width: 600px;
+	// margin: 1px;
 	margin: auto;
-	margin-top: 100px;
+	padding: 16px;
+	border: 1px rgb(204, 204, 204) solid;
+	border-radius: 30px;
+}
+
+input
+{
+	padding-left: 10px;
+}
+
+#datapicker-container
+{
+	padding-top: 10px;
+	padding-left: 20px;
+}
+
+#datapicker-container .mat-calendar
+{
+	background-color: rgb(245, 245, 245);
+}
+
+#datapicker-info
+{
+	padding-top: 5px;
+	text-align: center;
+}
+
+::ng-deep #datapicker-container .mat-calendar-header
+{
+	background-color: rgb(195, 195, 195) !important;
+}
+
+#submit-button
+{
+	border-radius: 30px;
+	background-color: rgb(245, 245, 245);
+}
+
+::ng-deep #form-container .mat-form-field-wrapper
+{
+	padding-bottom: 16px !important;
 }
