@@ -4,26 +4,17 @@
     <form #registerForm="ngForm">
       <div fxLayout="column">
         <mat-form-field appearance="outline">
-          <input matInput type="text" placeholder="IMIĘ"
-                required
-                [(ngModel)]="model.name" name="name">
-                <mat-icon matSuffix>*</mat-icon>
+          <input matInput type="text" placeholder="IMIĘ" required [(ngModel)]="model.name" name="name">
+          <mat-icon matSuffix>*</mat-icon>
         </mat-form-field>
-        
         <mat-form-field appearance="outline">
-          <input matInput type="text" placeholder="NAZWISKO"
-                required
-                [(ngModel)]="model.surname" name="surname">
-                <mat-icon matSuffix>*</mat-icon>
+          <input matInput type="text" placeholder="NAZWISKO" required [(ngModel)]="model.surname" name="surname">
+          <mat-icon matSuffix>*</mat-icon>
         </mat-form-field>
-  
         <mat-form-field appearance="outline">
-          <input matInput type="password" placeholder="HASŁO"
-                required
-                [(ngModel)]="model.password" name="password">
-                <mat-icon matSuffix>*</mat-icon>
+          <input matInput type="password" placeholder="HASŁO" required [(ngModel)]="model.password" name="password">
+          <mat-icon matSuffix>*</mat-icon>
         </mat-form-field>
-
         <div>
           <button mat-stroked-button type="submit" id="submit-button">ZALOGUJ SIĘ</button>
         </div>
@@ -31,4 +22,3 @@
     </form>
   </div>
 </div>
-  
