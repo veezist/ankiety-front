@@ -1,5 +1,9 @@
 export class UserLogin
 {
-	public email: string;
-	public password: string;
+	constructor 
+	(
+		public name: string,
+		public surname: string,
+		public password: string
+	) { };
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserLogin } from 'src/app/models/auth/user-login';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit
 {
-  constructor() { }
+	public model = new UserLogin('Ala', 'Makota', '123');
 
-  ngOnInit()
-  {
-  }
+	constructor()
+	{
+		this.model.surname = "";
+	}
+
+	get diagnostic() { return JSON.stringify(this.model); }
 }
