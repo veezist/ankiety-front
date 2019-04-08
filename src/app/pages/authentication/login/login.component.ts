@@ -15,5 +15,9 @@ export class LoginComponent implements OnInit
 		this.model.surname = "";
 	}
 
+	ngOnInit()
+	{
+	}
+
 	get diagnostic() { return JSON.stringify(this.model); }
 }
