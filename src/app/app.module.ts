@@ -49,6 +49,9 @@ import { CreatorQuestionContainerComponent } from './pages/survey-creator/survey
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EmailChangeComponent } from './pages/profile/email-change/email-change.component';
 import { PasswordChangeComponent } from './pages/profile/password-change/password-change.component';
+import { HeaderSegmentComponent } from './pages/home/segments/header-segment/header-segment.component';
+import { CirclesSegmentComponent } from './pages/home/segments/circles-segment/circles-segment.component';
+import { VideoSegmentComponent } from './pages/home/segments/video-segment/video-segment.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { PasswordChangeComponent } from './pages/profile/password-change/passwor
     CreatorQuestionContainerComponent,
     ProfileComponent,
     EmailChangeComponent,
-    PasswordChangeComponent
+    PasswordChangeComponent,
+    HeaderSegmentComponent,
+    CirclesSegmentComponent,
+    VideoSegmentComponent
   ],
   imports: [
     BrowserModule,
