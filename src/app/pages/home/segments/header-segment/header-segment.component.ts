@@ -15,6 +15,6 @@ export class HeaderSegmentComponent implements OnInit
 	
 	scrollToCircles()
 	{
-		document.getElementsByTagName("app-circles-segment").item(0).scrollIntoView({ behavior: "smooth" });
+		document.getElementsByTagName("app-circles-segment").item(0).scrollIntoView({ behavior: "smooth", block: "end" });
 	}
 }
