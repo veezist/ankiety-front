@@ -52,6 +52,8 @@ import { PasswordChangeComponent } from './pages/profile/password-change/passwor
 import { HeaderSegmentComponent } from './pages/home/segments/header-segment/header-segment.component';
 import { CirclesSegmentComponent } from './pages/home/segments/circles-segment/circles-segment.component';
 import { VideoSegmentComponent } from './pages/home/segments/video-segment/video-segment.component';
+import { SurveyPreviewSegmentComponent } from './pages/home/segments/survey-preview-segment/survey-preview-segment.component';
+import { StatisticsQuestionTypesSegmentComponent } from './pages/home/segments/statistics-question-types-segment/statistics-question-types-segment.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import { VideoSegmentComponent } from './pages/home/segments/video-segment/video
     PasswordChangeComponent,
     HeaderSegmentComponent,
     CirclesSegmentComponent,
-    VideoSegmentComponent
+    VideoSegmentComponent,
+    SurveyPreviewSegmentComponent,
+    StatisticsQuestionTypesSegmentComponent
   ],
   imports: [
     BrowserModule,
