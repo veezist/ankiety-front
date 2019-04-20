@@ -13,9 +13,11 @@ export class HomeComponent implements OnInit {
   }
 
 }*/
-
 import {Component, OnInit} from '@angular/core';
 import { DataService } from '../../services/data.service';
+import {} from 'jquery';
+declare var $:JQueryStatic;
+
 export interface Tile {
   color: string;
   cols: number;
@@ -38,6 +40,9 @@ export class HomeComponent implements OnInit
       this.surveys = data
       console.log(this.surveys); 
     });
+
+    $("app-survey-preview-segment").css("background-color", "red");
+    console.log("$$$");
   }
 
   tiles: Tile[] = [
