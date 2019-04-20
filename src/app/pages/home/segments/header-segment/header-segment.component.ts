@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {} from 'jquery';
+declare var $: any;
 
 @Component({
 	selector: 'app-header-segment',
@@ -19,5 +21,10 @@ export class HeaderSegmentComponent implements OnInit
 		(document.getElementsByTagName("html").item(0) as HTMLElement).style.overflow = "auto";
 		(document.getElementsByTagName("body").item(0) as HTMLElement).style.overflow = "auto";
 		document.getElementById("pp-nav").remove();
+	}
+
+	onNavArrowDownClick()
+	{
+		$.fn.pagepiling.moveSectionDown();
 	}
 }

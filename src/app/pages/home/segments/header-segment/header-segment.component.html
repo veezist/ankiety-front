@@ -1,4 +1,10 @@
-<div id="segment-container">
-  <h1>HELLO!@#!@C</h1>
-  <button  routerLink="/creator" (click)="scrollToCircles()">Scroll to circles</button>
+<div id="segment-container" fxLayoutAlign="center center">
+	<div fxLayout="column" id="container">
+		<mat-card fxFlex="80%">Hello</mat-card>
+		<div fxFlex="10%" fxLayout="row">
+			<button fxFlex="50%">Create</button>
+			<button fxFlex="50%">Register</button>
+		</div>
+		<mat-icon id="nav-arrow-down" fxFlex="10%" (click)="onNavArrowDownClick()">arrow_downward</mat-icon>
+	</div>
 </div>
