@@ -38,11 +38,11 @@ export class HomeComponent implements OnInit
   {
     this.data.getFakeSurveys().subscribe(data => {
       this.surveys = data
-      console.log(this.surveys); 
+      // console.log(this.surveys); 
     });
 
     $("app-survey-preview-segment").css("background-color", "red");
-    console.log("$$$");
+    // console.log("$$$");
     $(document).ready(function() {
       ($('#pagepiling') as any).pagepiling({
           menu: '#toolbar',
