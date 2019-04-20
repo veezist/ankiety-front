@@ -43,6 +43,37 @@ export class HomeComponent implements OnInit
 
     $("app-survey-preview-segment").css("background-color", "red");
     console.log("$$$");
+    $(document).ready(function() {
+      ($('#pagepiling') as any).pagepiling({
+          menu: '#toolbar',
+            direction: 'vertical',
+            verticalCentered: true,
+            sectionsColor: [],
+            anchors: [],
+            scrollingSpeed: 700,
+            easing: 'swing',
+            loopBottom: true,
+            loopTop: false,
+            css3: true,
+            navigation: {
+                'textColor': '#000',
+                'bulletsColor': '#000',
+                'position': 'right',
+                'tooltips': ['welcome', 'circles', 'preview', 'statistics', 'tutorial']
+            },
+             normalScrollElements: null,
+            normalScrollElementTouchThreshold: 5,
+            touchSensitivity: 5,
+            keyboardScrolling: true,
+            sectionSelector: '.section',
+            animateAnchor: false,
+    
+        //events
+        onLeave: function(index, nextIndex, direction){},
+        afterLoad: function(anchorLink, index){},
+        afterRender: function(){},
+      });
+    });
   }
 
   tiles: Tile[] = [
