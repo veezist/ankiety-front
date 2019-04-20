@@ -10,17 +10,22 @@
 
 #circles-options-container
 {
-	height: 50%;
-	margin: 70px;
-	margin-top: 150px;
+	height: 400px;
+	width: 1000px;
+	margin-bottom: 50px;
 	background-color: rgba(255, 255, 255, 0.3);
 }
 
 .circle
 {
-	height: 215px;
+	height: 192px;
 	margin: 25px;
-	-webkit-animation: rotation 5s infinite linear;
+}
+
+.circle:hover
+{
+	-webkit-animation: rotation 1s normal linear;
+	animation-iteration-count: 1;
 }
 
 @-webkit-keyframes rotation {
@@ -31,3 +36,13 @@
 			-webkit-transform: rotateY(359deg);
 	}
 }
+/* 
+@-webkit-keyframes rotation {
+	from {
+			-webkit-transform: rotateY(0deg);
+	}
+	to {
+			-webkit-transform: rotateY(359deg);
+	}
+} 
+*/
