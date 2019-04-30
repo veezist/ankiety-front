@@ -25,6 +25,7 @@ import {
   MatRadioModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatButtonToggleModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -107,7 +108,8 @@ import { StatisticsQuestionTypesSegmentComponent } from './pages/home/segments/s
     MatSelectModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,
