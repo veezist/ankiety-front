@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { UserRegister } from "src/app/models/auth/user-register";
+import { NgForm } from "@angular/forms";
 
 @Component(
 	{
@@ -13,9 +14,17 @@ export class RegisterComponent
 
 	constructor()
 	{
-		this.model.surname = "";
+		this.model.surname = null;
 		this.model.dateOfDeletion = null;
 	}
 
 	get diagnostic() { return JSON.stringify(this.model); }
+
+	onFormSubmit(form: NgForm)
+	{
+		if (form.valid)
+		{
+			console.log(this.diagnostic);
+		}
+	}
 }

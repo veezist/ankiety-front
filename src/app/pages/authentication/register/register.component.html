@@ -1,7 +1,7 @@
 <!-- {{ diagnostic }} -->
 <div id="container">
 	<div id="form-container">
-		<form #registerForm="ngForm">
+		<form #registerForm="ngForm" (ngSubmit)="onFormSubmit(registerForm)">
 			<div fxLayout="row">
 				<div fxFlex="60%" fxLayout="column">
 					<mat-form-field appearance="outline">

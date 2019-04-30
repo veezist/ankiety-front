@@ -2,7 +2,7 @@
   
   <a routerLink="" mat-button>
     <mat-icon id="nav-site-icon">insert_chart_outlined</mat-icon>
-    <span>ANKIETY</span>
+    <span>ANKIETY.PL</span>
   </a>
 
   <a routerLink="/creator" mat-button>
@@ -10,11 +10,17 @@
     Kreator
   </a>
 
+  <a routerLink="/" mat-button>
+    <mat-icon>list</mat-icon>
+    Baza ankiet
+  </a>
+
   <span class="fill-remaining-space"></span>
 
-  <a routerLink="/profile" mat-button>
-    Profil
+  <a routerLink="/" mat-button (click)="onAboutAnchorClick()">
+    O stronie
   </a>
+
   <a routerLink="/login" mat-button>
     Logowanie
   </a>
