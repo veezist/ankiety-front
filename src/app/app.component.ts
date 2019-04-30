@@ -26,6 +26,7 @@ export class AppComponent implements OnInit
 			// console.log('entered home component');
 			$('html').css('overflow', 'hidden');
 			$('body').css('overflow', 'initial');
+			$('#nav-about-option').css('display', 'block');
 		}
 	}
 
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit
 			$('html').css('overflow', 'auto');
 			$('body').css('overflow', 'initial');
 			$('#pp-nav').remove();
+			$('#nav-about-option').css('display', 'none');
 			// document.getElementById("pp-nav").remove();
 		}
 	}
