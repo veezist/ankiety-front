@@ -34,8 +34,7 @@
 	
 	<ul *ngIf="surveys">
 		<li *ngFor="let survey of (surveys.data | search: searchText)">
-			<img  [src]="survey.avatar">
-			<p>{{ survey.NameSurvey }}</p>
+			<app-survey-list-item [survey]="survey"></app-survey-list-item>
 		</li>
 	</ul>
 </mat-card>

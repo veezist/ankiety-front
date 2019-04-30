@@ -56,6 +56,7 @@ import { VideoSegmentComponent } from './pages/home/segments/video-segment/video
 import { SurveyPreviewSegmentComponent } from './pages/home/segments/survey-preview-segment/survey-preview-segment.component';
 import { StatisticsQuestionTypesSegmentComponent } from './pages/home/segments/statistics-question-types-segment/statistics-question-types-segment.component';
 import { SearchPipe } from './other/search.pipe';
+import { SurveyListItemComponent } from './pages/survey-list/survey-list-item/survey-list-item.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { SearchPipe } from './other/search.pipe';
     VideoSegmentComponent,
     SurveyPreviewSegmentComponent,
     StatisticsQuestionTypesSegmentComponent,
-    SearchPipe
+    SearchPipe,
+    SurveyListItemComponent
   ],
   imports: [
     BrowserModule,
