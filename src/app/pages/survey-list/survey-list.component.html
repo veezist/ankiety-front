@@ -2,7 +2,7 @@
 	<h1>Ankiety</h1>
 	<!-- <input type="text" placeholder="WYSZUKAJ..."> -->
 	<mat-form-field id="search-field" appearance="outline">
-		<input matInput type="text" placeholder="WYSZUKAJ..." name="name">
+		<input matInput [(ngModel)]="searchText" type="text" placeholder="WYSZUKAJ..." name="name">
 	</mat-form-field>
 	
 	<div id="filters-row" fxLayout="row" fxLayoutAlign="center start">
@@ -14,26 +14,26 @@
 		</div>
 		<div fxFlex="25%">
 			<mat-form-field class="mat-elevation-z1">
-				<mat-select>
-					<mat-option>
-						ala
+				<mat-select placeholder="Kategoria">
+					<mat-option *ngFor="let category of categories" [value]="category.value">
+						{{ category.viewValue }}
 					</mat-option>
 				</mat-select>
 			</mat-form-field>
 		</div>
 		<div fxFlex="25%">
 			<mat-form-field  class="mat-elevation-z1">
-				<mat-select>
-					<mat-option>
-						ala
+				<mat-select placeholder="Sortuj">
+					<mat-option *ngFor="let sortOption of sortOptions" [value]="sortOption.value">
+						{{ sortOption.viewValue }}
 					</mat-option>
 				</mat-select>
 			</mat-form-field>
 		</div>
 	</div>
-
+	
 	<ul *ngIf="surveys">
-		<li *ngFor="let survey of surveys.data">
+		<li *ngFor="let survey of (surveys.data | search: searchText)">
 			<img  [src]="survey.avatar">
 			<p>{{ survey.NameSurvey }}</p>
 		</li>

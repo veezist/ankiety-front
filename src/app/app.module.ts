@@ -55,6 +55,7 @@ import { CirclesSegmentComponent } from './pages/home/segments/circles-segment/c
 import { VideoSegmentComponent } from './pages/home/segments/video-segment/video-segment.component';
 import { SurveyPreviewSegmentComponent } from './pages/home/segments/survey-preview-segment/survey-preview-segment.component';
 import { StatisticsQuestionTypesSegmentComponent } from './pages/home/segments/statistics-question-types-segment/statistics-question-types-segment.component';
+import { SearchPipe } from './other/search.pipe';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { StatisticsQuestionTypesSegmentComponent } from './pages/home/segments/s
     CirclesSegmentComponent,
     VideoSegmentComponent,
     SurveyPreviewSegmentComponent,
-    StatisticsQuestionTypesSegmentComponent
+    StatisticsQuestionTypesSegmentComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
