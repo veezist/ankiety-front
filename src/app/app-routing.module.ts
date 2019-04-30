@@ -19,8 +19,8 @@ const routes: Routes = [
   ,{ path: 'surveys', component: SurveyListComponent }
   ,{ path: 'email_change', component: EmailChangeComponent}
   ,{ path: 'password_change', component: PasswordChangeComponent}
-  ,{ path: '', component: HomeComponent }
   ,{ path: 'profile', component: ProfileComponent }
+  ,{ path: '', component: HomeComponent }
   ,{ path: '**', redirectTo: 'surveys', pathMatch: 'full'
  }
   
