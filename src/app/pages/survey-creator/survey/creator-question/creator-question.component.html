@@ -3,7 +3,7 @@
 		<input matInput [(ngModel)]="question.text" placeholder="Treść Pytania">
 	</mat-form-field>
 
-	<div *ngIf="question.type !== QuestionTYPES.Text">
+	<div *ngIf="(question.type !== QuestionTYPES.Text) && editableQuestion">
 		<div class="answer-options" fxLayout="row">
 			<button class="answer-option-add-answer" mat-stroked-button type="button" color="primary"
 				(click)="onAddAnswerButtonClicked(question.type)">
@@ -16,6 +16,7 @@
 		<mat-list *ngFor="let answer of question.answers">
 			<app-survey-creator-answer class="answer-container" 
 				[answer]="answer" 
+				[editableAnswer]="editableQuestion"
 				(answerOrderedToDelete)="onAnswerOrederedToDelete($event)">
 			</app-survey-creator-answer>
 		</mat-list>

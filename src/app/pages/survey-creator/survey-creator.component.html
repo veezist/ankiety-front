@@ -18,7 +18,8 @@
 	
 	<div cdkDrag *ngFor="let question of questions; let idx=index" class="question-container" 
 			[ngClass]="{'condQuestion-list-container' : (question.type === this.QuestionTYPES.Condition)}">
-		<app-creator-question-container 
+		<app-creator-question-container
+			[editableSurvey]="true" 
 			[question]="question"
 			[isConditional]="false"
 			[idx]="idx"

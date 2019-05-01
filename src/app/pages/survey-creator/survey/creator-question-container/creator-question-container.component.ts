@@ -9,6 +9,8 @@ import { Question } from 'src/app/models/survey/question';
 export class CreatorQuestionContainerComponent implements OnInit
 {
   @Input()
+  private editableSurvey: boolean;
+  @Input()
   private question: Question;
   @Input()
   private isConditional: boolean;

@@ -1,9 +1,10 @@
 <section class="survey-question-container"
   style="position: relative;" [attr.data-question-index]="idx">
 
-  <app-creator-survey-question [question]="question"></app-creator-survey-question>
+  <app-creator-survey-question [question]="question" [editableQuestion]="editableSurvey">
+  </app-creator-survey-question>
 
-  <div class="survey-question-type">
+  <div class="survey-question-type" *ngIf="editableSurvey">
     <select [(ngModel)]="question.type" (change)="onQuestionTypeChange(idx)" disableUnderline (click)="printIndex()">
       <option> {{QuestionTYPES.Text}} </option>
       <option> {{QuestionTYPES.OneOfN}} </option>
@@ -12,7 +13,7 @@
     </select>
   </div>
 
-  <mat-card class="survey-question-options">
+  <mat-card class="survey-question-options" *ngIf="editableSurvey">
     <ng-content select="[slot=drag-handle]"></ng-content>
     <mat-icon (click)="onAddQuestionBelowButtonClick( idx )" matTooltip="nowe pytanie poniżej" [matTooltipShowDelay]="500">
       arrow_drop_down

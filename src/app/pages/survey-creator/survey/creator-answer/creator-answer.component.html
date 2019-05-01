@@ -11,7 +11,7 @@
 			<input matInput placeholder="treść odpowiedzi">
 		</mat-form-field>
 		<div class="answer-suffix" fxLayout="row">
-			<span class="answer-suffix-remove">
+			<span class="answer-suffix-remove" *ngIf="editableAnswer">
 				<mat-icon color="warn" style="cursor: pointer;" (click)="onRemoveAnswerClick()"> clear </mat-icon>
 			</span>
 		</div>

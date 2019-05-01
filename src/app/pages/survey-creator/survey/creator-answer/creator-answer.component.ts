@@ -14,6 +14,8 @@ export class CreatorAnswerComponent implements OnInit
 
   @Input()
   private answer: Answer;
+  @Input()
+  private editableAnswer: boolean;
   private QuestionTYPES = Question.TYPES;
   
   constructor()

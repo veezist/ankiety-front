@@ -12,6 +12,8 @@ export class CreatorQuestionComponent implements OnInit
 {
 	@Input()
 	public question: Question;
+	@Input()
+	private editableQuestion: boolean;
 
 	private QuestionTYPES = Question.TYPES;
 
