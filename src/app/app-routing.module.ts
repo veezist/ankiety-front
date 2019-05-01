@@ -10,6 +10,7 @@ import { SurveyCreatorComponent } from './pages/survey-creator/survey-creator.co
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EmailChangeComponent } from './pages/profile/email-change/email-change.component';
 import { PasswordChangeComponent } from './pages/profile/password-change/password-change.component';
+import { SurveyFillComponent } from './pages/survey-fill/survey-fill.component';
 
 const routes: Routes = [
    { path: 'creator', component: SurveyCreatorComponent }
@@ -20,8 +21,9 @@ const routes: Routes = [
   ,{ path: 'email_change', component: EmailChangeComponent}
   ,{ path: 'password_change', component: PasswordChangeComponent}
   ,{ path: 'profile', component: ProfileComponent }
+  ,{ path: 'survey/:id', component: SurveyFillComponent }
   ,{ path: '', component: HomeComponent }
-  ,{ path: '**', redirectTo: 'surveys', pathMatch: 'full'
+  ,{ path: '**', redirectTo: '', pathMatch: 'full'
  }
   
 ];
