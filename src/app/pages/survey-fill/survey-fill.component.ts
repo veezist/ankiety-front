@@ -15,7 +15,9 @@ export class SurveyFillComponent implements OnInit
 	
 	ngOnInit()
 	{
-		this.questions.push(new Question());
+		let q0 = new Question();
+		q0.text = "Co sądzisz o systemie eNego?";
+		this.questions.push(q0);
 		let q = new Question(this.QuestionTYPES.OneOfN);
 		q.text = "Are you sure?";
 		q.addAnswer(this.QuestionTYPES.OneOfN);
