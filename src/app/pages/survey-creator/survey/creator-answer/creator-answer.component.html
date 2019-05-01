@@ -4,11 +4,11 @@
 			<input matInput placeholder="treść odpowiedzi">
 		</mat-form-field>
 	</div>
-
+	
 	<div *ngIf="answer.type === QuestionTYPES.OneOfN">
 		<mat-radio-button [value]="answer.id" class="one-of-n-checkbox" color="primary"></mat-radio-button>
 		<mat-form-field [floatLabel]="'never'">
-			<input matInput placeholder="treść odpowiedzi">
+			<input matInput placeholder="treść odpowiedzi" [readonly]="!editableAnswer">
 		</mat-form-field>
 		<div class="answer-suffix" fxLayout="row">
 			<span class="answer-suffix-remove" *ngIf="editableAnswer">
@@ -21,7 +21,7 @@
 		<mat-checkbox class="one-of-n-checkbox" color="primary">
 		</mat-checkbox>
 		<mat-form-field [floatLabel]="'never'">
-			<input matInput placeholder="treść odpowiedzi">
+			<input matInput placeholder="treść odpowiedzi" [readonly]="!editableAnswer">
 		</mat-form-field>
 		<div class="answer-suffix" fxLayout="row">
 			<span class="answer-suffix-remove">
@@ -33,7 +33,7 @@
 	<div *ngIf="answer.type === QuestionTYPES.Condition">
 		<mat-radio-button [value]="answer.id" class="one-of-n-checkbox" color="primary"></mat-radio-button>
 		<mat-form-field [floatLabel]="'never'">
-			<input matInput placeholder="treść odpowiedzi">
+			<input matInput placeholder="treść odpowiedzi" [readonly]="!editableAnswer">
 		</mat-form-field>
 		<div class="answer-suffix" fxLayout="row">
 			<span class="answer-suffix-remove">

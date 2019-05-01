@@ -3,7 +3,7 @@ import { Answer } from "./answer";
 export class Question
 {
 	public type: Question.TYPES;
-	private text: string;
+	public text: string;
 	private answers: Array<Answer> = [];
 	private answerIdCount = 0;
 	public selectedAnswerIndex: number;
