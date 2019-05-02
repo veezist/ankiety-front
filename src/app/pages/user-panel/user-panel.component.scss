@@ -31,4 +31,15 @@
 #surveys-container
 {
 	height: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.survey-grid-item
+{
+	width: 100px;
+	height: 100px;
+	border: 1px solid gray;
+	margin: 20px;
 }
