@@ -135,7 +135,20 @@ export class SurveyCreatorComponent implements OnInit
 	dropConditionalQuestion(event: CdkDragDrop<string[]>, question: Question)
 	{
     moveItemInArray(question.conditionalQuestions[question.selectedAnswerIndex], event.previousIndex, event.currentIndex);
-  }
+	}
+	
+	onAddNewCreatingSurveySquare()
+	{
+		let txt = $('<div>ankieta</div>').css('margin-top', '66px').css('margin-left', '48px');
+		let square = $('<div>').addClass("creating-survey-square").append(txt).appendTo('#creating-survey-square-container').hover(function() {
+			$(this).addClass('mat-elevation-z6');
+		},
+		function() {
+			$(this).removeClass('mat-elevation-z6');
+		});
+
+		// square
+	}
 }
 
 /* import { Component } from '@angular/core';

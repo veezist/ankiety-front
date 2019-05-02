@@ -100,3 +100,27 @@
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
 
+// right panel
+#right-panel
+{
+	position: fixed;
+	width: 170px;
+	height: calc(100% - 64px - 32px);
+	bottom: 0;
+	left: 50%;
+	right: 50%;
+	margin-left: 435px;
+	background-color: lightgray;
+}
+
+#creating-survey-square-container
+{
+	height: calc(100% - 32px);
+	overflow: auto;
+}
+
+#add-creating-survey-square-button
+{
+	width: 100%;
+	bottom: 0;
+}
