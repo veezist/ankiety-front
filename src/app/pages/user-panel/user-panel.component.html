@@ -1,4 +1,18 @@
-<div id="user-profile-container" fxLayout="row">
-	<div fxFlex="20%"></div>
-	<div fxFlex="80%"></div>
+<div id="user-panel-container" fxLayout="row">
+	<div id="left-panel"  fxFlex="20%">
+		<div><img src="../../../assets/images/user-panel/user-test-image.jpg"></div>
+		Bartek
+	</div>
+	<div id="right-panel" fxFlex="80%">
+		<input>
+		<div>
+			<mat-button-toggle-group id="tabs" name="fontStyle" aria-label="Font Style">
+				<mat-button-toggle class="tab-button" value="bold">Tworzone(10)</mat-button-toggle>
+				<mat-button-toggle class="tab-button" value="italic">Trwające(0)</mat-button-toggle>
+				<mat-button-toggle class="tab-button" value="underline">Zakończone(2)</mat-button-toggle>
+			</mat-button-toggle-group>
+			<mat-card id="surveys-container">
+			</mat-card>
+		</div>
+	</div>
 </div>

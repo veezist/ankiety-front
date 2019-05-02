@@ -1,8 +1,34 @@
-#user-profile-container
+#user-panel-container
 {
 	width: 900px;
+	height: 900px;
 	margin: auto;
 	margin-top: 20px;
 	margin-bottom: 50px;
-	border: 1px solid gray;
+}
+
+#left-panel
+{
+	border-right: 1px solid black;
+	padding-right: 20px;
+}
+
+#right-panel
+{
+	padding-left: 20px;
+}
+
+#tabs
+{
+	width: 100%;
+}
+
+.tab-button
+{
+	width: 33%;
+}
+
+#surveys-container
+{
+	height: 600px;
 }
