@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SwiperModule } from 'angular2-useful-swiper';
 
 import {
   MatButtonModule,
@@ -117,7 +118,8 @@ import { UserPanelComponent } from './pages/user-panel/user-panel.component';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    SwiperModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,
