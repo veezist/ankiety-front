@@ -2,8 +2,138 @@
 {
 	width: 100%;
 	height: 100%;
-	background-image: url("/assets/images/home/statistics-segment-background.png");
+	background-image: url("/assets/images/home/circles-segment-background2.jpg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+#statistics-options-container
+{
+	height: 300px;
+	width: 500px;
+	margin-bottom: 50px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+#statistics-options-container:hover
+{
+	height: 300px;
+	width: 450px;
+	margin-bottom: 50px;
+	background-color: rgba(255, 255, 255, 0.3);
+	-webkit-animation: scale 1s forwards;
+}
+#statistics-options-container{
+	height: 300px;
+	width: 450px;
+	margin-bottom: 50px;
+	background-color: rgba(255, 255, 255, 0.3);
+	-webkit-animation: scaleback 1s forwards;
+}
+
+@-webkit-keyframes scale {
+	from {
+			-webkit-transform: scale(1);
+	}
+	to {
+			-webkit-transform: scale(1.15);
+			
+	}
+}
+@-webkit-keyframes scaleback {
+	from {
+			-webkit-transform: scale(1.15);
+	}
+	to {
+			-webkit-transform: scale(1);
+			
+	}
+}
+
+.vl{
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 7px;
+	height: 480px;
+	margin-bottom: 50px;
+	background-color:#000000bd;
+	border-radius: 50%;
+	opacity: 0.75;
+}
+table {
+  border-collapse: collapse;
+	border-style: hidden;
+
+}
+
+table td {
+	border: 1px solid #000000bd;
+	border-radius: 50%;
+	opacity: 0.75;
+	
+}
+img{
+	text-align: center;
+}
+
+#cell1{
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+#cell2{
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+#cell3{
+	padding-top: 10px;
+	padding-right: 10px;
+	
+}
+#cell4{
+	padding-top: 10px;
+	padding-left: 10px;
+
+	
+}
+.head{
+
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Poppins', sans-serif;
+	color:	#FFA500;
+}
+
+.slide-info{
+	padding-left:10px;
+	font-family: 'Open Sans Condensed', sans-serif;  
+  text-align:center;
+  font-size: 23px;
+	color:#FFA500;
+}
+td:hover{
+	-webkit-animation: scale 1s forwards;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+  }
+  .swiper-slide {
+	font-size: 18px;
+	
+	
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	}
+	
