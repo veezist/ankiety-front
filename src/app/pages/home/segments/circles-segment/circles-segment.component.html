@@ -1,8 +1,15 @@
 <div id="segment-container" fxLayoutAlign="center center">
 	<mat-card id="circles-options-container" fxLayout="row" fxLayoutAlign="center center">
-		<button mat-fab fxFlex="25%" class="circle"></button>
-		<button mat-fab fxFlex="25%" class="circle"></button>
-		<button mat-fab fxFlex="25%" class="circle"></button>
-		<button mat-fab fxFlex="25%" class="circle"></button>
+		<!--<div class = "animDiv" [@firstCircle]= "isOpen ? 'open' : 'closed'" > -->
+			<button mat-button id = "firstCircle" (mouseenter)="mouseHoverFirstCircle($event)" mat-fab fxFlex="25%"  
+			class="circle" (click)="onFirstCircleClick()">	
+			
+			</button>		
+			
+		<button mat-fab fxFlex="25%" class="circle" (click)="onTimeOfSurveyCreatingClick()">Szybkość tworzenia</button>
+		<button mat-fab fxFlex="25%" class="circle"(click)="onStatForYouClick()">Statystyki dla Ciebie</button>
+		<button mat-fab fxFlex="25%" class="circle"(click)="onTypesOfQuestionClick()()">Różne typy pytań</button>
 	</mat-card>
 </div>
+
+
