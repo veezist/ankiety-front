@@ -25,8 +25,8 @@ const routes: Routes = [
   ,{ path: 'user-panel', component: UserPanelComponent }
   ,{ path: 'survey/:id', component: SurveyFillComponent }
   ,{ path: '', component: HomeComponent }
-  ,{ path: '**', redirectTo: '', pathMatch: 'full'
- }
+  ,{ path: '**', redirectTo: '', pathMatch: 'full'}
+
   
 ];
 
