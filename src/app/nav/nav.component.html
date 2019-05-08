@@ -17,7 +17,9 @@
 
   <span class="fill-remaining-space"></span>
 
-  <a routerLink="/" mat-button id="nav-about-option" (click)="onAboutAnchorClick()">
+  <a routerLink="/" mat-button id="nav-about-option" (click)="onAboutAnchorClick()"
+    *ngIf="this.router.url === '/'"
+  >
     O stronie
   </a>
 

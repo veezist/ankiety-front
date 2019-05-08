@@ -64,4 +64,9 @@ export class AuthService
     }
     return this.userData.tokenResponse;
   }
+
+  public get isUserLoggedIn(): boolean
+  {
+    return false;
+  }
 }
