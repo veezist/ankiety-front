@@ -7,13 +7,13 @@
 	
 	<div id="filters-row" fxLayout="row" fxLayoutAlign="center start">
 		<div fxFlex="25%">
-			<mat-button-toggle mat-raised-button class="mat-elevation-z1">Ostatnie</mat-button-toggle>
+			<mat-button-toggle mat-raised-button>Ostatnie</mat-button-toggle>
 		</div>
 		<div fxFlex="25%">
-			<mat-button-toggle mat-raised-button class="mat-elevation-z1">Popularne</mat-button-toggle>
+			<mat-button-toggle mat-raised-button>Popularne</mat-button-toggle>
 		</div>
 		<div fxFlex="25%">
-			<mat-form-field class="mat-elevation-z1">
+			<mat-form-field>
 				<mat-select placeholder="Kategoria">
 					<mat-option *ngFor="let category of categories" [value]="category.value">
 						{{ category.viewValue }}
@@ -22,7 +22,7 @@
 			</mat-form-field>
 		</div>
 		<div fxFlex="25%">
-			<mat-form-field  class="mat-elevation-z1">
+			<mat-form-field>
 				<mat-select placeholder="Sortuj">
 					<mat-option *ngFor="let sortOption of sortOptions" [value]="sortOption.value">
 						{{ sortOption.viewValue }}
