@@ -20,7 +20,7 @@ export interface SortOption
 })
 export class SurveyListComponent implements OnInit {
 	
-	surveys: Object;
+	surveys: Array<SurveyHeader>;
 	
 	categories: Category[] = 
 	[
@@ -40,15 +40,8 @@ export class SurveyListComponent implements OnInit {
 	
 	ngOnInit() 
 	{
-		/*
-		this.data.getFakeSurveys().subscribe(data => {
-			this.surveys = data
-			// console.log(JSON.stringify(this.surveys));
-		});
-		*/
-
-		this.data.getObjectByUrl(SurveyHeader, 'surveys/published').subscribe(result => {
-			alert('ok');
+		this.data.getObjectsByUrl(SurveyHeader, 'surveys/published').subscribe(result => {
+			this.surveys = result;
 		});
 	}
 }

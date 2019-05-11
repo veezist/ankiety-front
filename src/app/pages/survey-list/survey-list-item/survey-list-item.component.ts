@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SurveyHeader } from 'src/app/models/survey/survey-header';
 
 @Component({
 	selector: 'app-survey-list-item',
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SurveyListItemComponent implements OnInit 
 {
 	@Input()
-	survey: Object;
+	survey: SurveyHeader;
 
 	constructor() { }
 	
