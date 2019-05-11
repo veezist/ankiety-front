@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class DataService
 {
-  private baseUrl = '';
+  private baseUrl = 'https://localhost:8443/api/';
 
   constructor(private http: HttpClient) { }
 
