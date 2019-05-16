@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpEvent } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService
 {
-  private baseUrl = 'https://localhost:8443/api/';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private api: ApiService) { }
 
   getFakeSurveys()
   {
@@ -19,7 +18,7 @@ export class DataService
 
   public postObjectByUrl<T>(object: T, relativeUrl: string): Observable<T>
   {
-    const url = `${this.baseUrl}${relativeUrl}`;
+    const url = `${this.api.baseUrl}${relativeUrl}`;
     return this.http.post<T>(url, object).pipe(
       catchError(this.handleError)
     );
@@ -28,7 +27,7 @@ export class DataService
   public postObjectByUrlWithOptions<T>(object: T, relativeUrl: string, options: any)
   : Observable<HttpEvent<T>>
   {
-    const url = `${this.baseUrl}${relativeUrl}`;
+    const url = `${this.api.baseUrl}${relativeUrl}`;
     return this.http.post<T>(url, object, options).pipe(
       catchError(this.handleError)
     );
@@ -36,7 +35,7 @@ export class DataService
 
   public getObjectByUrl<T>(type: new () => T, relativeUrl: string): Observable<T>
   {
-    const url = `${this.baseUrl}${relativeUrl}`;
+    const url = `${this.api.baseUrl}${relativeUrl}`;
     return this.http.get<T>(url).pipe(
       catchError(this.handleError)
     );
@@ -44,7 +43,7 @@ export class DataService
 
   public putObjectByUrl<T>(object: T, relativeUrl: string): Observable<T>
   {
-    const url = `${this.baseUrl}${relativeUrl}?id=${(<any>object).id}`;
+    const url = `${this.api.baseUrl}${relativeUrl}?id=${(<any>object).id}`;
     return this.http.put<T>(url, object).pipe(
       catchError(this.handleError)
     );
@@ -52,7 +51,7 @@ export class DataService
 
   public deleteObjectByUrl<T>(object: T, relativeUrl: string): Observable<T>
   {
-    const url = `${this.baseUrl}${relativeUrl}?id=${(<any>object).id}`;
+    const url = `${this.api.baseUrl}${relativeUrl}?id=${(<any>object).id}`;
     return this.http.delete<T>(url).pipe(
       catchError(this.handleError)
     );
@@ -64,7 +63,7 @@ export class DataService
     options?: any
   ): Observable<T[]>
   {
-    const url = `${this.baseUrl}${relativeUrl}`;
+    const url = `${this.api.baseUrl}${relativeUrl}`;
     return this.http.get(url, options).pipe(
       map((input: Object, indx: number) => {
         const inputObjects: T[] = input as T[];
