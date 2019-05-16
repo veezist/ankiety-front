@@ -40,7 +40,7 @@ export class AuthService
 
   public register(registerData: UserRegister)
   {
-    const url = this.api.baseUrl + 'users/register';
+    const url = 'users/register';
     return this.dataService.postObjectByUrlWithOptions(registerData, url, { observe: 'response' });
   }
 
