@@ -60,6 +60,7 @@ import { SearchPipe } from './other/search.pipe';
 import { SurveyListItemComponent } from './pages/survey-list/survey-list-item/survey-list-item.component';
 import { SurveyFillComponent } from './pages/survey-fill/survey-fill.component';
 import { UserPanelComponent } from './pages/user-panel/user-panel.component';
+import { RegisterCompleteComponent } from './pages/authentication/register-complete/register-complete.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { UserPanelComponent } from './pages/user-panel/user-panel.component';
     SearchPipe,
     SurveyListItemComponent,
     SurveyFillComponent,
-    UserPanelComponent
+    UserPanelComponent,
+    RegisterCompleteComponent
   ],
   imports: [
     BrowserModule,

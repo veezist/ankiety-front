@@ -41,7 +41,7 @@ export class AuthService
   public register(registerData: UserRegister)
   {
     const url = 'users/register';
-    return this.dataService.postObjectByUrlWithOptions(registerData, url, { observe: 'response' });
+    return this.http.post(url, registerData, { observe: 'response' });
   }
 
   public signIn(credentials: UserLogin)
