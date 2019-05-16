@@ -31,6 +31,8 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
@@ -121,7 +123,8 @@ import { RegisterCompleteComponent } from './pages/authentication/register-compl
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonToggleModule,
-    SwiperModule
+    SwiperModule,
+    NgxSpinnerModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,

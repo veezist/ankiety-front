@@ -40,7 +40,7 @@ export class AuthService
 
   public register(registerData: UserRegister)
   {
-    const url = 'users/register';
+    const url = this.api.baseUrl + 'users/register';
     return this.http.post(url, registerData, { observe: 'response' });
   }
 
