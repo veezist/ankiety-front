@@ -33,7 +33,7 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/pagepiling.js/dist/jquery.pagepiling.js",
-              "./node_modules/swiper/dist/js/swiper.min.js" 
+              "./node_modules/swiper/dist/js/swiper.js" 
             ]
           },
           "configurations": {
