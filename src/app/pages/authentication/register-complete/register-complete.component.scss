@@ -1,0 +1,31 @@
+#container
+{
+	width: 600px;
+	margin: auto;
+	margin-top: 20px;
+	padding: 16px;
+	border: 1px rgb(204, 204, 204) solid;
+	border-radius: 30px;
+	text-align: justify;
+}
+
+#header-icon
+{
+	float: right;
+	width: 50px;
+	height: 50px;
+	font-size: 50px;
+	line-height: 0.6;
+}
+
+#submit-button
+{
+	margin-top: 20px;
+	border-radius: 30px;
+	background-color: rgb(245, 245, 245);
+}
+
+h1, button
+{
+	color: rgb(141, 141, 141);
+}

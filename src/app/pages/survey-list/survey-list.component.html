@@ -33,7 +33,7 @@
 	</div>
 	
 	<ul *ngIf="surveys">
-		<li *ngFor="let survey of (surveys.data | search: searchText)">
+		<li *ngFor="let survey of (surveys | search: searchText)">
 			<app-survey-list-item [survey]="survey"></app-survey-list-item>
 		</li>
 	</ul>

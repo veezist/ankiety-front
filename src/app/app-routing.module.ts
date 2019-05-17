@@ -12,11 +12,13 @@ import { EmailChangeComponent } from './pages/profile/email-change/email-change.
 import { PasswordChangeComponent } from './pages/profile/password-change/password-change.component';
 import { SurveyFillComponent } from './pages/survey-fill/survey-fill.component';
 import { UserPanelComponent } from './pages/user-panel/user-panel.component';
+import { RegisterCompleteComponent } from './pages/authentication/register-complete/register-complete.component';
 
 const routes: Routes = [
    { path: 'creator', component: SurveyCreatorComponent }
   ,{ path: 'login', component: LoginComponent }
   ,{ path: 'register', component: RegisterComponent }
+  ,{ path: 'register-complete', component: RegisterCompleteComponent }
   ,{ path: 'forgot-password', component: ForgotPasswordComponent }
   ,{ path: 'surveys', component: SurveyListComponent }
   ,{ path: 'email_change', component: EmailChangeComponent}

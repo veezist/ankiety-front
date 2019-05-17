@@ -2,10 +2,11 @@ export class UserRegister
 {
 	constructor 
 	(
-		public name: string,
-		public surname: string,
-		public password: string,
-		public email: string,
-		public dateOfDeletion: Date
+		public name = '',
+		public surname = '',
+		public displayName = '',
+		public password = '',
+		public email = '',
+		public dateOfDeletion = new Date(),
 	) { };
 }

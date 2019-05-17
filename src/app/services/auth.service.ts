@@ -4,6 +4,7 @@ import { DataService } from './data.service';
 import { HttpClient, HttpErrorResponse, HttpEvent } from '@angular/common/http';
 import { UserRegister } from '../models/auth/user-register';
 import { UserLogin } from '../models/auth/user-login';
+import { ApiService } from './api.service';
 
 const authUserDataCookieKey = 'authTokenCookieKey';
 
@@ -19,7 +20,8 @@ export class AuthService
 {
   private userData = new UserData();
 
-  constructor(private dataService: DataService, private cookieService: CookieService,private http: HttpClient)
+  constructor(private dataService: DataService, private cookieService: CookieService, 
+              private http: HttpClient, private api: ApiService)
   {
     if (this.cookieService.check(authUserDataCookieKey))
     {
@@ -38,8 +40,8 @@ export class AuthService
 
   public register(registerData: UserRegister)
   {
-    const url = '';
-    return this.dataService.postObjectByUrlWithOptions(registerData, url, { observe: 'response' });
+    const url = this.api.baseUrl + 'users/register';
+    return this.http.post(url, registerData, { observe: 'response' });
   }
 
   public signIn(credentials: UserLogin)
