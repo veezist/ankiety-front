@@ -30,6 +30,7 @@ import {
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
+import { JwtModule } from '@auth0/angular-jwt'
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -124,7 +125,8 @@ import { RegisterCompleteComponent } from './pages/authentication/register-compl
     MatNativeDateModule,
     MatButtonToggleModule,
     SwiperModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    JwtModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,

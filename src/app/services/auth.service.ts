@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { DataService } from './data.service';
-import { HttpClient, HttpErrorResponse, HttpEvent } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { UserRegister } from '../models/auth/user-register';
 import { UserLogin } from '../models/auth/user-login';
 import { ApiService } from './api.service';
@@ -44,11 +44,30 @@ export class AuthService
     return this.http.post(url, registerData, { observe: 'response' });
   }
 
-  public signIn(credentials: UserLogin)
+  public signIn(credentials: UserLogin, callback)
   {
-    const credentialsString = '';
-    this.dataService.postObjectByUrl(credentialsString, 'Token').subscribe( (credentialsResponse) => {
-      this.userData.tokenResponse = credentialsResponse;
+    const url = 'https://localhost:8443/oauth/token';
+    /*
+    this.http.post(url, credentials, { observe: 'response' }).subscribe( (response) => {
+      // this.userData.tokenResponse = credentialsResponse;
+      console.log('login response: ' + response);
+      callback();
+    });
+    */
+    let body = new URLSearchParams();
+    body.set('username', credentials.username);
+    body.set('password', credentials.password);
+    
+    let headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append('authorization', 'Basic c3VydmV5LWNsaWVudDpzdXJ2ZXktc2VjcmV0');
+    // headers = headers.append('content-type', 'application/x-www-form-urlencoded');
+    
+    console.log(headers);
+
+    this.http.post(url, body, {  headers: headers, observe: 'response' }).subscribe( (response) => {
+      // this.userData.tokenResponse = credentialsResponse;
+      console.log('login response: ' + response);
+      callback();
     });
   }
 

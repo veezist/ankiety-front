@@ -2,8 +2,9 @@ export class UserLogin
 {
 	constructor 
 	(
-		public name: string,
-		public surname: string,
-		public password: string
+		// public name = '',
+		// public surname = '',
+		public username = '',
+		public password = ''
 	) { };
 }
