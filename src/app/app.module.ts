@@ -62,6 +62,7 @@ import { SurveyListItemComponent } from './pages/survey-list/survey-list-item/su
 import { SurveyFillComponent } from './pages/survey-fill/survey-fill.component';
 import { UserPanelComponent } from './pages/user-panel/user-panel.component';
 import { RegisterCompleteComponent } from './pages/authentication/register-complete/register-complete.component';
+import { PanelSurveyItemComponent } from './pages/user-panel/panel-survey-item/panel-survey-item.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { RegisterCompleteComponent } from './pages/authentication/register-compl
     SurveyListItemComponent,
     SurveyFillComponent,
     UserPanelComponent,
-    RegisterCompleteComponent
+    RegisterCompleteComponent,
+    PanelSurveyItemComponent
   ],
   imports: [
     BrowserModule,
@@ -136,6 +138,7 @@ import { RegisterCompleteComponent } from './pages/authentication/register-compl
     },
     CookieService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [PanelSurveyItemComponent]
 })
 export class AppModule { }

@@ -1,0 +1,19 @@
+<div id="survey-panel-item-container" fxLayout="column">
+
+    
+    <h3>{{survey.title}}Nazwa ankiety</h3>
+		<p id="description">
+      Krótki opis ankiety coby człowiek wiedział o co chodzi
+		<!-- {{survey.description}} -->
+    </p>
+    <div id="wrap" fxLayout="row"></div> 
+      <div  id="answerswrap">	
+    <p id="answer-count">7</p>
+    <p id="desc">odpowiedzi</p>
+  </div>
+    
+
+<div matTooltip="Edytuj" (click)="redirect()" id="edit_ico" style="background-image:url('../../../assets/images/home/edit.svg'); " ></div>
+</div>
+
+	
