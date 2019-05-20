@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLogin } from 'src/app/models/auth/user-login';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthService } from 'src/app/services/auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,21 +12,29 @@ import { NgxSpinnerService } from 'ngx-spinner';
 })
 export class LoginComponent implements OnInit
 {
-	public model = new UserLogin('Ala', 'Makota', '123');
+	public model = new UserLogin();
 
-	constructor(private spinner: NgxSpinnerService)
+	constructor(private spinner: NgxSpinnerService, public auth: AuthService)
 	{
-		this.model.surname = "";
 	}
 
 	ngOnInit()
 	{
-		setTimeout(() => 
-		{
-			// this.spinner.show();
-			// console.log('juz');
-		}, 300);
 	}	 
 
 	get diagnostic() { return JSON.stringify(this.model); }
+
+	public onFormSubmit(form: NgForm)
+	{
+		if (form.valid)
+		{
+			this.spinner.show();
+			
+			console.log(this.diagnostic);
+
+			this.auth.signIn(this.model, () => {
+				console.log('callback called');
+			});
+		}
+	}
 }

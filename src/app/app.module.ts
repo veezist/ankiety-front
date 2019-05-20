@@ -29,6 +29,7 @@ import {
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
+import { JwtModule } from '@auth0/angular-jwt'
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -124,7 +125,8 @@ import { PanelSurveyItemComponent } from './pages/user-panel/panel-survey-item/p
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonToggleModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    JwtModule
   ],
   entryComponents: [
     ForgotPasswordDialogComponent,

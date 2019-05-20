@@ -40,8 +40,10 @@ export class SurveyListComponent implements OnInit {
 	
 	ngOnInit() 
 	{
-		this.data.getObjectsByUrl(SurveyHeader, 'surveys/published').subscribe(result => {
-			this.surveys = result;
-		});
+		this.data.getObjectsByUrl(SurveyHeader, 'surveys/published').subscribe
+		(
+			result => {	this.surveys = result; },
+			error  => { alert(error); }	
+		);
 	}
 }

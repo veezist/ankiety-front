@@ -2,16 +2,18 @@
 <div id="login-container">
   <h1 id="form-header">Logowanie</h1>
   <div id="form-container">
-    <form #registerForm="ngForm">
+    <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
       <div fxLayout="column">
         <mat-form-field appearance="outline">
-          <input matInput type="text" placeholder="IMIĘ" required [(ngModel)]="model.name" name="name">
+          <input matInput type="text" placeholder="NAZWA UŻYTKOWNIKA" required [(ngModel)]="model.username" name="username">
           <mat-icon matSuffix>*</mat-icon>
         </mat-form-field>
+        <!-- 
         <mat-form-field appearance="outline">
           <input matInput type="text" placeholder="NAZWISKO" required [(ngModel)]="model.surname" name="surname">
           <mat-icon matSuffix>*</mat-icon>
         </mat-form-field>
+        -->
         <mat-form-field appearance="outline">
           <input matInput type="password" placeholder="HASŁO" required [(ngModel)]="model.password" name="password">
           <mat-icon matSuffix>*</mat-icon>
