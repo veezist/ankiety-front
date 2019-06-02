@@ -139,11 +139,13 @@ export class SurveyCreatorComponent implements OnInit
 	
 	onAddNewCreatingSurveySquare()
 	{
-		let txt = $('<div>ankieta</div>').css('margin-top', '66px').css('margin-left', '48px');
+		let txt = $('<p>ankieta</p>').css('margin', '0')
+									.css('text-align', 'center')
+									.css('line-height', '10');
 		let square = $('<div>').addClass("creating-survey-square").append(txt).appendTo('#creating-survey-square-container').hover(function() {
 			$(this).addClass('mat-elevation-z6');
 		},
-		function() {
+		function(){
 			$(this).removeClass('mat-elevation-z6');
 		});
 
