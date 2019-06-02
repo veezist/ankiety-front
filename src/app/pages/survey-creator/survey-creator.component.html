@@ -1,6 +1,17 @@
 <div fxLayout="row" fxLayoutAlign="center start">
 	<mat-card id="left-panel" class="panel">
-	
+		<div id="survey-options-container">
+			<mat-icon id="survey-image">add_photo_alternate</mat-icon>
+			<mat-form-field appearance="outline" class="survey-options-form-field">
+				<mat-label>Nazwa Ankiety</mat-label>
+				<input matInput type="text">
+			</mat-form-field>
+			<hr>
+			<mat-form-field appearance="outline" class="survey-options-form-field">
+				<mat-label>Opis Ankiety</mat-label>
+				<textarea id="description-textarea" matInput type="text"></textarea>
+			</mat-form-field>
+		</div>
 	</mat-card>
 	
 	<mat-card id="survey-container" fxLayout="column" #questionRef cdkDropList (cdkDropListDropped)="dropQuestion($event)">

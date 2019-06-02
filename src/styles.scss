@@ -138,3 +138,11 @@ button:focus
 	border: 1px solid gray;
 	background-color: white;
 }
+
+#survey-options-container
+{
+    .mat-form-field-wrapper
+    {
+        padding-bottom: 0px;
+    }    
+}

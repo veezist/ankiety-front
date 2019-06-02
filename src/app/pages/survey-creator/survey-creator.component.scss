@@ -7,12 +7,47 @@
 	position: sticky;
 	top: 64px;
 	align-self: flex-start;
-	background-color: lightgray;
+	background-color: rgba(200, 200, 200, 0.4);
 }
 
 // left panel
 #left-panel
 {
+}
+
+#survey-options-container
+{
+	width: 100%;
+	min-height: 450px;
+	margin-top: 4px;
+	border: 1px solid gray;
+	border-radius: 4px;
+	background-color: white;
+}
+
+#survey-image
+{
+	height: 200px;
+	width: 100%;
+	display: block;
+	font-size: 190px;
+	margin: auto;
+	text-align: center;
+	color: rebeccapurple;
+	cursor: pointer;
+}
+
+.survey-options-form-field
+{
+	display: block;
+	width: calc(100% - 10px);
+	margin-bottom: 0px;
+	margin: auto;
+}
+
+#description-textarea
+{
+	min-height: 170px;
 }
 
 // creator
