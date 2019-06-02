@@ -1,7 +1,25 @@
+.panel
+{
+	max-width: 250px;
+	min-width: 170px;
+	height: calc(100vh - 64px - 32px);
+	flex-grow: 1;
+	position: sticky;
+	top: 64px;
+	align-self: flex-start;
+	background-color: lightgray;
+}
+
+// left panel
+#left-panel
+{
+}
+
+// creator
 #survey-container
 {
-	width: 800px;
-	margin: auto;
+	min-width: 800px;
+	margin: 25px;
 	margin-top: 20px;
 	margin-bottom: 50px;
 	border: 1px solid gray;
@@ -103,14 +121,6 @@
 // right panel
 #right-panel
 {
-	position: fixed;
-	width: 170px;
-	height: calc(100% - 64px - 32px);
-	bottom: 0;
-	left: 50%;
-	right: 50%;
-	margin-left: 435px;
-	background-color: lightgray;
 }
 
 #creating-survey-square-container

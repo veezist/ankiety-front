@@ -1,78 +1,84 @@
-<mat-card id="survey-container" fxLayout="column" #questionRef cdkDropList (cdkDropListDropped)="dropQuestion($event)">
-
-	<mat-card-title>Kreator Ankiety</mat-card-title>
-
-	<button id="publish-survey-button" mat-raised-button type="button" color="primary"
-			(click)="onPublishSurveyButtonClick()">
-		Opublikuj Ankietę
-	</button>
-
-	<mat-card id="no-questions-added-placeholder" class="mat-elevation-z4"
-			  *ngIf="questions.length === 0">
-		<button id="no-questions-added-placeholder-add-first-question" mat-stroked-button type="button"
-				color="primary" (click)="onAddFirstQuestionButtonClick()">
-			Dodaj pierwsze pytanie
-		</button>
-	</mat-card>
-
+<div fxLayout="row" fxLayoutAlign="center start">
+	<mat-card id="left-panel" class="panel">
 	
-	<div cdkDrag *ngFor="let question of questions; let idx=index" class="question-container" 
-			[ngClass]="{'condQuestion-list-container' : (question.type === this.QuestionTYPES.Condition)}">
-		<app-creator-question-container
-			[editableSurvey]="true" 
-			[question]="question"
-			[isConditional]="false"
-			[idx]="idx"
-			(questionTypeChange)="onQuestionTypeChange($event)"
-			(addQuestionBelowButtonClick)="onAddQuestionBelowButtonClick($event)"
-			(addQuestionAboveButtonClick)="onAddQuestionAboveButtonClick($event)"
-			(deleteQuestionButtonClick)="onDeleteQuestionButtonClick($event)"
-		>
-			<mat-icon slot="drag-handle" cdkDragHandle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
-				drag_handle
-			</mat-icon>
-		</app-creator-question-container>
-
-		<div cdkDropList (cdkDropListDropped)="dropConditionalQuestion($event, question)" id="condQestion-and-sub-questions">
-			<div cdkDrag
-				*ngFor="let condQuestion of question.conditionalQuestions[question.selectedAnswerIndex]; 
-				let condIdx=index"
-				class="condQuestion-container">
-				<app-creator-question-container
-					[question]="condQuestion"
-					[isConditional]="true"
-					[idx]="condIdx"
-					(questionTypeChange)="onConditionalQuestionTypeChange($event, idx)"
-					(addQuestionBelowButtonClick)="onAddCondQuestionBelowButtonClick(idx, $event)"
-					(addQuestionAboveButtonClick)="onAddCondQuestionAboveButtonClick(idx, $event)"
-					(deleteQuestionButtonClick)="onDeleteCondoQuestionButtonClick(idx, $event)"
-				>
-					<mat-icon slot="drag-handle" cdkDragHandle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
-						drag_handle
-					</mat-icon>
-				</app-creator-question-container>
+	</mat-card>
+	
+	<mat-card id="survey-container" fxLayout="column" #questionRef cdkDropList (cdkDropListDropped)="dropQuestion($event)">
+	
+		<mat-card-title>Kreator Ankiety</mat-card-title>
+	
+		<button id="publish-survey-button" mat-raised-button type="button" color="primary"
+				(click)="onPublishSurveyButtonClick()">
+			Opublikuj Ankietę
+		</button>
+	
+		<mat-card id="no-questions-added-placeholder" class="mat-elevation-z4"
+				  *ngIf="questions.length === 0">
+			<button id="no-questions-added-placeholder-add-first-question" mat-stroked-button type="button"
+					color="primary" (click)="onAddFirstQuestionButtonClick()">
+				Dodaj pierwsze pytanie
+			</button>
+		</mat-card>
+	
+		
+		<div cdkDrag *ngFor="let question of questions; let idx=index" class="question-container" 
+				[ngClass]="{'condQuestion-list-container' : (question.type === this.QuestionTYPES.Condition)}">
+			<app-creator-question-container
+				[editableSurvey]="true" 
+				[question]="question"
+				[isConditional]="false"
+				[idx]="idx"
+				(questionTypeChange)="onQuestionTypeChange($event)"
+				(addQuestionBelowButtonClick)="onAddQuestionBelowButtonClick($event)"
+				(addQuestionAboveButtonClick)="onAddQuestionAboveButtonClick($event)"
+				(deleteQuestionButtonClick)="onDeleteQuestionButtonClick($event)"
+			>
+				<mat-icon slot="drag-handle" cdkDragHandle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
+					drag_handle
+				</mat-icon>
+			</app-creator-question-container>
+	
+			<div cdkDropList (cdkDropListDropped)="dropConditionalQuestion($event, question)" id="condQestion-and-sub-questions">
+				<div cdkDrag
+					*ngFor="let condQuestion of question.conditionalQuestions[question.selectedAnswerIndex]; 
+					let condIdx=index"
+					class="condQuestion-container">
+					<app-creator-question-container
+						[question]="condQuestion"
+						[isConditional]="true"
+						[idx]="condIdx"
+						(questionTypeChange)="onConditionalQuestionTypeChange($event, idx)"
+						(addQuestionBelowButtonClick)="onAddCondQuestionBelowButtonClick(idx, $event)"
+						(addQuestionAboveButtonClick)="onAddCondQuestionAboveButtonClick(idx, $event)"
+						(deleteQuestionButtonClick)="onDeleteCondoQuestionButtonClick(idx, $event)"
+					>
+						<mat-icon slot="drag-handle" cdkDragHandle matTooltip="przemieść pytanie" [matTooltipShowDelay]="1000">
+							drag_handle
+						</mat-icon>
+					</app-creator-question-container>
+				</div>
 			</div>
 		</div>
-	</div>
-
-	<div fxLayout="row">
-		<button id="save-survey-button" mat-raised-button type="button" color="primary"
-				(click)="onSaveSurveyButtonClicked()">
-		Zapisz Zmiany
-		</button>
-		<button id="delete-survey-button" mat-raised-button type="button" color="warn" 
-				(click)="onDeleteSurveyButtonClick()">
-		Usuń Ankietę
-		</button>
-	</div>
-
-</mat-card>
-
-<mat-card id="right-panel">
-	<div id="creating-survey-square-container">
-		<!-- <div class="creating-survey-square"></div>
-		<div class="creating-survey-square"></div>
-		<div class="creating-survey-square"></div> -->
-	</div>
-	<button id="add-creating-survey-square-button" mat-flat-button (click)="onAddNewCreatingSurveySquare()">+</button>
-</mat-card>
+	
+		<div fxLayout="row">
+			<button id="save-survey-button" mat-raised-button type="button" color="primary"
+					(click)="onSaveSurveyButtonClicked()">
+			Zapisz Zmiany
+			</button>
+			<button id="delete-survey-button" mat-raised-button type="button" color="warn" 
+					(click)="onDeleteSurveyButtonClick()">
+			Usuń Ankietę
+			</button>
+		</div>
+	
+	</mat-card>
+	
+	<mat-card id="right-panel" class="panel">
+		<div id="creating-survey-square-container">
+			<!-- <div class="creating-survey-square"></div>
+			<div class="creating-survey-square"></div>
+			<div class="creating-survey-square"></div> -->
+		</div>
+		<button id="add-creating-survey-square-button" mat-flat-button (click)="onAddNewCreatingSurveySquare()">+</button>
+	</mat-card>	
+</div>
