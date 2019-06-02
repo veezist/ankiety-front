@@ -151,6 +151,23 @@ export class SurveyCreatorComponent implements OnInit
 
 		// square
 	}
+	
+	onAddImageClick()
+	{
+		document.getElementById('survey-image-file').click();
+	}
+
+	onImageInputClick(event)
+	{
+		const file = event.target.files[0];
+		console.log('image file changed');
+
+		let image = document.getElementById('survey-image-uploaded');
+		(image as HTMLImageElement).src = URL.createObjectURL(event.target.files[0]);
+
+		$('#survey-image-uploaded').css('display', 'block');
+		$('#survey-image').css('display', 'none');
+	}
 }
 
 /* import { Component } from '@angular/core';

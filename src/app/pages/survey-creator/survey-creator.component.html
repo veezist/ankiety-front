@@ -1,7 +1,9 @@
 <div fxLayout="row" fxLayoutAlign="center start">
 	<mat-card id="left-panel" class="panel">
 		<div id="survey-options-container">
-			<mat-icon id="survey-image">add_photo_alternate</mat-icon>
+			<mat-icon id="survey-image" (click)="onAddImageClick()">add_photo_alternate</mat-icon>
+			<img id="survey-image-uploaded" src="#"/>
+			<input id="survey-image-file" type="file" (change)="onImageInputClick($event)">
 			<mat-form-field appearance="outline" class="survey-options-form-field">
 				<mat-label>Nazwa Ankiety</mat-label>
 				<input matInput type="text">
